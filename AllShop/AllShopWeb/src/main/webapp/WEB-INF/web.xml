@@ -1,0 +1,68 @@
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	id="WebApp_ID" version="2.5">
+	<display-name>Archetype Created Web Application</display-name>
+
+	<!-- classpath*:/spring-ws-core.xml classpath*:/spring-persistence-core.xml 
+		classpath*:/spring-tomcat-beans.xml classpath*:com/allshop/framework/**/*Dao.xml 
+			<context-param>
+			/WEB-INF/spring-ws-servlet.xml
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath*:springContext*.xml</param-value>
+	</context-param>
+	/WEB-INF/applicationContext.xml
+	contextConfigLocation
+	classpath*:spring-ws-servlet.xml
+	classpath*:com/allshop/framework/persistence/catalogo/rol/dao/CatalogoRolDao.xml
+		-->
+
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+		/WEB-INF/applicationContext.xml
+		classpath*:com/**/spring-tomcat-beans.xml
+		classpath*:com/**/spring-persistence-core.xml
+		classpath*:com/allshop/framework/**/*Dao.xml
+		classpath*:com/**/spring-ws-servlet.xml
+		</param-value>
+	</context-param>
+
+	<listener>
+		<listener-class>
+			org.springframework.web.context.request.RequestContextListener
+		</listener-class>
+	</listener>
+
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+	<servlet>
+		<servlet-name>spring-ws</servlet-name>
+		<servlet-class>org.springframework.ws.transport.http.MessageDispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>transformWsdlLocations</param-name>
+			<param-value>true</param-value>
+		</init-param>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>classpath*:com/**/spring-ws-servlet.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>spring-ws</servlet-name>
+		<url-pattern>*.wsdl</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>spring-ws</servlet-name>
+		<url-pattern>/ws/*</url-pattern>
+	</servlet-mapping>
+
+	<welcome-file-list>
+		<welcome-file>/index.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>

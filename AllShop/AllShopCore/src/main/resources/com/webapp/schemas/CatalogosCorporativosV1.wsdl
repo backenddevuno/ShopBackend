@@ -1,0 +1,836 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" 
+xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" 
+xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp200409="http://schemas.xmlsoap.org/ws/2004/09/policy" 
+xmlns:wsp200607="http://www.w3.org/2006/07/ws-policy" 
+xmlns:mf="http://www.allshop.com/framework/core/ws/general/Headers" 
+xmlns:ns="http://www.allshop.com/framework/core/ws/CatalogosCorporativos"
+xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+xmlns:tns="http://www.allshop.com/framework/core/ws/CatalogosCorporativos" 
+xmlns:tnsEx="http://www.allshop.com/framework/core/ws/common/ExcepcionGeneral"
+xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="CatalogosCorporativos" 
+targetNamespace="http://www.allshop.com/framework/core/ws/CatalogosCorporativos" >
+
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.allshop.com/framework/core/ws/CatalogosCorporativos">
+      <xsd:include schemaLocation="CatalogosCorporativosV1.xsd"/>
+      <xsd:import schemaLocation="HeaderRequest.xsd" namespace="http://www.allshop.com/framework/core/ws/general/Headers"/>
+      <xsd:import schemaLocation="HeaderResponse.xsd" namespace="http://www.allshop.com/framework/core/ws/general/Headers"/>
+      <xsd:import schemaLocation="ExcepcionGenerica.xsd" namespace="http://www.allshop.com/framework/core/ws/common/ExcepcionGeneral"/>
+	  <xsd:import schemaLocation="EstatusComun.xsd" namespace="http://www.allshop.com/framework/core/ws/common/EstatusComunes"/>
+	  <xsd:import schemaLocation="ElementosComunes.xsd" namespace="http://www.allshop.com/framework/core/ws/common/ElementosComunes"/>
+    </xsd:schema>
+  </wsdl:types>
+
+<!--CatalogoRolesIn-CatalogoRolesOut-->
+  <wsdl:message name="CrearCatalogoRolExcepcion">
+    <wsdl:part name="error" element="tnsEx:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="CrearCatalogoRolRequest">
+    <wsdl:part name="request" element="ns:CrearCatalogoRolIn" />
+    <wsdl:part name="requestHeader" element="mf:HeaderReq" />
+  </wsdl:message>
+  <wsdl:message name="CrearCatalogoRolResponse">
+    <wsdl:part name="response" element="ns:CrearCatalogoRolOut" />
+    <wsdl:part name="responseHeader" element="mf:HeaderRes" />
+  </wsdl:message>
+<!--CatalogoPagoIn-CatalogoPagoOut-->
+  <wsdl:message name="CrearCatalogoPagoExcepcion">
+    <wsdl:part name="error" element="tnsEx:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="CrearCatalogoPagoRequest">
+    <wsdl:part name="request" element="ns:CrearCatalogoPagoIn" />
+    <wsdl:part name="requestHeader" element="mf:HeaderReq" />
+  </wsdl:message>
+  <wsdl:message name="CrearCatalogoPagoResponse">
+    <wsdl:part name="response" element="ns:CrearCatalogoPagoOut" />
+    <wsdl:part name="responseHeader" element="mf:HeaderRes" />
+  </wsdl:message>
+<!--CatalogoDesarrolloIn-CatalogoDesarrolloOut-->
+  <wsdl:message name="CrearCatalogoDesarrolloExcepcion">
+    <wsdl:part name="error" element="tnsEx:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="CrearCatalogoDesarrolloRequest">
+    <wsdl:part name="request" element="ns:CrearCatalogoDesarrolloIn" />
+    <wsdl:part name="requestHeader" element="mf:HeaderReq" />
+  </wsdl:message>
+  <wsdl:message name="CrearCatalogoDesarrolloResponse">
+    <wsdl:part name="response" element="ns:CrearCatalogoDesarrolloOut" />
+    <wsdl:part name="responseHeader" element="mf:HeaderRes" />
+  </wsdl:message>
+<!--CatalogoLenguajeIn-CatalogoLenguajeOut-->
+  <wsdl:message name="CrearCatalogoLenguajeExcepcion">
+    <wsdl:part name="error" element="tnsEx:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="CrearCatalogoLenguajeRequest">
+    <wsdl:part name="request" element="ns:CrearCatalogoLenguajeIn" />
+    <wsdl:part name="requestHeader" element="mf:HeaderReq" />
+  </wsdl:message>
+  <wsdl:message name="CrearCatalogoLenguajeResponse">
+    <wsdl:part name="response" element="ns:CrearCatalogoLenguajeOut" />
+    <wsdl:part name="responseHeader" element="mf:HeaderRes" />
+  </wsdl:message>
+<!--CatalogoMonedaIn-CatalogoMonedaOut-->
+  <wsdl:message name="CrearCatalogoMonedaExcepcion">
+    <wsdl:part name="error" element="tnsEx:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="CrearCatalogoMonedaRequest">
+    <wsdl:part name="request" element="ns:CrearCatalogoMonedaIn" />
+    <wsdl:part name="requestHeader" element="mf:HeaderReq" />
+  </wsdl:message>
+  <wsdl:message name="CrearCatalogoMonedaResponse">
+    <wsdl:part name="response" element="ns:CrearCatalogoMonedaOut" />
+    <wsdl:part name="responseHeader" element="mf:HeaderRes" />
+  </wsdl:message>
+<!--CatalogoCategoriaIn-CatalogoCategoriaOut-->
+  <wsdl:message name="CrearCatalogoCategoriaExcepcion">
+    <wsdl:part name="error" element="tnsEx:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="CrearCatalogoCategoriaRequest">
+    <wsdl:part name="request" element="ns:CrearCatalogoCategoriaIn" />
+    <wsdl:part name="requestHeader" element="mf:HeaderReq" />
+  </wsdl:message>
+  <wsdl:message name="CrearCatalogoCategoriaResponse">
+    <wsdl:part name="response" element="ns:CrearCatalogoCategoriaOut" />
+    <wsdl:part name="responseHeader" element="mf:HeaderRes" />
+  </wsdl:message>
+<!--CatalogoCalificacionIn-CatalogoCalificacionOut-->
+  <wsdl:message name="CrearCatalogoCalificacionExcepcion">
+    <wsdl:part name="error" element="tnsEx:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="CrearCatalogoCalificacionRequest">
+    <wsdl:part name="request" element="ns:CrearCatalogoCalificacionIn" />
+    <wsdl:part name="requestHeader" element="mf:HeaderReq" />
+  </wsdl:message>
+  <wsdl:message name="CrearCatalogoCalificacionResponse">
+    <wsdl:part name="response" element="ns:CrearCatalogoCalificacionOut" />
+    <wsdl:part name="responseHeader" element="mf:HeaderRes" />
+  </wsdl:message>
+<!--CatalogoCuentaIn-CatalogoCuentaOut-->
+  <wsdl:message name="CrearCatalogoCuentaExcepcion">
+    <wsdl:part name="error" element="tnsEx:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="CrearCatalogoCuentaRequest">
+    <wsdl:part name="request" element="ns:CrearCatalogoCuentaIn" />
+    <wsdl:part name="requestHeader" element="mf:HeaderReq" />
+  </wsdl:message>
+  <wsdl:message name="CrearCatalogoCuentaResponse">
+    <wsdl:part name="response" element="ns:CrearCatalogoCuentaOut" />
+    <wsdl:part name="responseHeader" element="mf:HeaderRes" />
+  </wsdl:message>
+  
+<!--CatalogoRolesIn-CatalogoRolesOut-->
+  <wsdl:message name="ConsultarCatalogoRolExcepcion">
+    <wsdl:part name="error" element="tnsEx:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarCatalogoRolRequest">
+    <wsdl:part name="request" element="ns:ConsultarCatalogoRolIn" />
+    <wsdl:part name="requestHeader" element="mf:HeaderReq" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarCatalogoRolResponse">
+    <wsdl:part name="response" element="ns:ConsultarCatalogoRolOut" />
+    <wsdl:part name="responseHeader" element="mf:HeaderRes" />
+  </wsdl:message>
+<!--CatalogoPagoIn-CatalogoPagoOut-->
+  <wsdl:message name="ConsultarCatalogoPagoExcepcion">
+    <wsdl:part name="error" element="tnsEx:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarCatalogoPagoRequest">
+    <wsdl:part name="request" element="ns:ConsultarCatalogoPagoIn" />
+    <wsdl:part name="requestHeader" element="mf:HeaderReq" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarCatalogoPagoResponse">
+    <wsdl:part name="response" element="ns:ConsultarCatalogoPagoOut" />
+    <wsdl:part name="responseHeader" element="mf:HeaderRes" />
+  </wsdl:message>
+<!--CatalogoDesarrolloIn-CatalogoDesarrolloOut-->
+  <wsdl:message name="ConsultarCatalogoDesarrolloExcepcion">
+    <wsdl:part name="error" element="tnsEx:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarCatalogoDesarrolloRequest">
+    <wsdl:part name="request" element="ns:ConsultarCatalogoDesarrolloIn" />
+    <wsdl:part name="requestHeader" element="mf:HeaderReq" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarCatalogoDesarrolloResponse">
+    <wsdl:part name="response" element="ns:ConsultarCatalogoDesarrolloOut" />
+    <wsdl:part name="responseHeader" element="mf:HeaderRes" />
+  </wsdl:message>
+<!--CatalogoLenguajeIn-CatalogoLenguajeOut-->
+  <wsdl:message name="ConsultarCatalogoLenguajeExcepcion">
+    <wsdl:part name="error" element="tnsEx:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarCatalogoLenguajeRequest">
+    <wsdl:part name="request" element="ns:ConsultarCatalogoLenguajeIn" />
+    <wsdl:part name="requestHeader" element="mf:HeaderReq" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarCatalogoLenguajeResponse">
+    <wsdl:part name="response" element="ns:ConsultarCatalogoLenguajeOut" />
+    <wsdl:part name="responseHeader" element="mf:HeaderRes" />
+  </wsdl:message>
+<!--CatalogoMonedaIn-CatalogoMonedaOut-->
+  <wsdl:message name="ConsultarCatalogoMonedaExcepcion">
+    <wsdl:part name="error" element="tnsEx:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarCatalogoMonedaRequest">
+    <wsdl:part name="request" element="ns:ConsultarCatalogoMonedaIn" />
+    <wsdl:part name="requestHeader" element="mf:HeaderReq" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarCatalogoMonedaResponse">
+    <wsdl:part name="response" element="ns:ConsultarCatalogoMonedaOut" />
+    <wsdl:part name="responseHeader" element="mf:HeaderRes" />
+  </wsdl:message>
+<!--CatalogoCategoriaIn-CatalogoCategoriaOut-->
+  <wsdl:message name="ConsultarCatalogoCategoriaExcepcion">
+    <wsdl:part name="error" element="tnsEx:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarCatalogoCategoriaRequest">
+    <wsdl:part name="request" element="ns:ConsultarCatalogoCategoriaIn" />
+    <wsdl:part name="requestHeader" element="mf:HeaderReq" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarCatalogoCategoriaResponse">
+    <wsdl:part name="response" element="ns:ConsultarCatalogoCategoriaOut" />
+    <wsdl:part name="responseHeader" element="mf:HeaderRes" />
+  </wsdl:message>
+<!--CatalogoCalificacionIn-CatalogoCalificacionOut-->
+  <wsdl:message name="ConsultarCatalogoCalificacionExcepcion">
+    <wsdl:part name="error" element="tnsEx:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarCatalogoCalificacionRequest">
+    <wsdl:part name="request" element="ns:ConsultarCatalogoCalificacionIn" />
+    <wsdl:part name="requestHeader" element="mf:HeaderReq" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarCatalogoCalificacionResponse">
+    <wsdl:part name="response" element="ns:ConsultarCatalogoCalificacionOut" />
+    <wsdl:part name="responseHeader" element="mf:HeaderRes" />
+  </wsdl:message>
+<!--CatalogoCuentaIn-CatalogoCuentaOut-->
+  <wsdl:message name="ConsultarCatalogoCuentaExcepcion">
+    <wsdl:part name="error" element="tnsEx:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarCatalogoCuentaRequest">
+    <wsdl:part name="request" element="ns:ConsultarCatalogoCuentaIn" />
+    <wsdl:part name="requestHeader" element="mf:HeaderReq" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarCatalogoCuentaResponse">
+    <wsdl:part name="response" element="ns:ConsultarCatalogoCuentaOut" />
+    <wsdl:part name="responseHeader" element="mf:HeaderRes" />
+  </wsdl:message>
+
+<!--CatalogoRolesIn-CatalogoRolesOut-->
+  <wsdl:message name="ModificarCatalogoRolExcepcion">
+    <wsdl:part name="error" element="tnsEx:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ModificarCatalogoRolRequest">
+    <wsdl:part name="request" element="ns:ModificarCatalogoRolIn" />
+    <wsdl:part name="requestHeader" element="mf:HeaderReq" />
+  </wsdl:message>
+  <wsdl:message name="ModificarCatalogoRolResponse">
+    <wsdl:part name="response" element="ns:ModificarCatalogoRolOut" />
+    <wsdl:part name="responseHeader" element="mf:HeaderRes" />
+  </wsdl:message>
+<!--CatalogoPagoIn-CatalogoPagoOut-->
+  <wsdl:message name="ModificarCatalogoPagoExcepcion">
+    <wsdl:part name="error" element="tnsEx:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ModificarCatalogoPagoRequest">
+    <wsdl:part name="request" element="ns:ModificarCatalogoPagoIn" />
+    <wsdl:part name="requestHeader" element="mf:HeaderReq" />
+  </wsdl:message>
+  <wsdl:message name="ModificarCatalogoPagoResponse">
+    <wsdl:part name="response" element="ns:ModificarCatalogoPagoOut" />
+    <wsdl:part name="responseHeader" element="mf:HeaderRes" />
+  </wsdl:message>
+<!--CatalogoDesarrolloIn-CatalogoDesarrolloOut-->
+  <wsdl:message name="ModificarCatalogoDesarrolloExcepcion">
+    <wsdl:part name="error" element="tnsEx:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ModificarCatalogoDesarrolloRequest">
+    <wsdl:part name="request" element="ns:ModificarCatalogoDesarrolloIn" />
+    <wsdl:part name="requestHeader" element="mf:HeaderReq" />
+  </wsdl:message>
+  <wsdl:message name="ModificarCatalogoDesarrolloResponse">
+    <wsdl:part name="response" element="ns:ModificarCatalogoDesarrolloOut" />
+    <wsdl:part name="responseHeader" element="mf:HeaderRes" />
+  </wsdl:message>
+<!--CatalogoLenguajeIn-CatalogoLenguajeOut-->
+  <wsdl:message name="ModificarCatalogoLenguajeExcepcion">
+    <wsdl:part name="error" element="tnsEx:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ModificarCatalogoLenguajeRequest">
+    <wsdl:part name="request" element="ns:ModificarCatalogoLenguajeIn" />
+    <wsdl:part name="requestHeader" element="mf:HeaderReq" />
+  </wsdl:message>
+  <wsdl:message name="ModificarCatalogoLenguajeResponse">
+    <wsdl:part name="response" element="ns:ModificarCatalogoLenguajeOut" />
+    <wsdl:part name="responseHeader" element="mf:HeaderRes" />
+  </wsdl:message>
+<!--CatalogoMonedaIn-CatalogoMonedaOut-->
+  <wsdl:message name="ModificarCatalogoMonedaExcepcion">
+    <wsdl:part name="error" element="tnsEx:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ModificarCatalogoMonedaRequest">
+    <wsdl:part name="request" element="ns:ModificarCatalogoMonedaIn" />
+    <wsdl:part name="requestHeader" element="mf:HeaderReq" />
+  </wsdl:message>
+  <wsdl:message name="ModificarCatalogoMonedaResponse">
+    <wsdl:part name="response" element="ns:ModificarCatalogoMonedaOut" />
+    <wsdl:part name="responseHeader" element="mf:HeaderRes" />
+  </wsdl:message>
+<!--CatalogoCategoriaIn-CatalogoCategoriaOut-->
+  <wsdl:message name="ModificarCatalogoCategoriaExcepcion">
+    <wsdl:part name="error" element="tnsEx:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ModificarCatalogoCategoriaRequest">
+    <wsdl:part name="request" element="ns:ModificarCatalogoCategoriaIn" />
+    <wsdl:part name="requestHeader" element="mf:HeaderReq" />
+  </wsdl:message>
+  <wsdl:message name="ModificarCatalogoCategoriaResponse">
+    <wsdl:part name="response" element="ns:ModificarCatalogoCategoriaOut" />
+    <wsdl:part name="responseHeader" element="mf:HeaderRes" />
+  </wsdl:message>
+<!--CatalogoCalificacionIn-CatalogoCalificacionOut-->
+  <wsdl:message name="ModificarCatalogoCalificacionExcepcion">
+    <wsdl:part name="error" element="tnsEx:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ModificarCatalogoCalificacionRequest">
+    <wsdl:part name="request" element="ns:ModificarCatalogoCalificacionIn" />
+    <wsdl:part name="requestHeader" element="mf:HeaderReq" />
+  </wsdl:message>
+  <wsdl:message name="ModificarCatalogoCalificacionResponse">
+    <wsdl:part name="response" element="ns:ModificarCatalogoCalificacionOut" />
+    <wsdl:part name="responseHeader" element="mf:HeaderRes" />
+  </wsdl:message>
+<!--CatalogoCuentaIn-CatalogoCuentaOut-->
+  <wsdl:message name="ModificarCatalogoCuentaExcepcion">
+    <wsdl:part name="error" element="tnsEx:Excepcion" />
+  </wsdl:message>
+  <wsdl:message name="ModificarCatalogoCuentaRequest">
+    <wsdl:part name="request" element="ns:ModificarCatalogoCuentaIn" />
+    <wsdl:part name="requestHeader" element="mf:HeaderReq" />
+  </wsdl:message>
+  <wsdl:message name="ModificarCatalogoCuentaResponse">
+    <wsdl:part name="response" element="ns:ModificarCatalogoCuentaOut" />
+    <wsdl:part name="responseHeader" element="mf:HeaderRes" />
+  </wsdl:message>
+
+  <wsdl:portType name="CatalogosCorporativos">
+<!--CatalogoRoles-->
+    <wsdl:operation name="CrearCatalogoRol">
+      <wsdl:input name="CrearCatalogoRolRequest" message="tns:CrearCatalogoRolRequest"/>
+      <wsdl:output name="CrearCatalogoRolResponse" message="tns:CrearCatalogoRolResponse"/>
+      <wsdl:fault name="excepcion" message="tns:CrearCatalogoRolExcepcion"/>
+    </wsdl:operation>
+<!--CatalogoPago-->
+    <wsdl:operation name="CrearCatalogoPago">
+      <wsdl:input name="CrearCatalogoPagoRequest" message="tns:CrearCatalogoPagoRequest"/>
+      <wsdl:output name="CrearCatalogoPagoResponse" message="tns:CrearCatalogoPagoResponse"/>
+      <wsdl:fault name="excepcion" message="tns:CrearCatalogoPagoExcepcion"/>
+    </wsdl:operation>
+<!--CatalogoDesarrollo-->
+    <wsdl:operation name="CrearCatalogoDesarrollo">
+      <wsdl:input name="CrearCatalogoDesarrolloRequest" message="tns:CrearCatalogoDesarrolloRequest"/>
+      <wsdl:output name="CrearCatalogoDesarrolloResponse" message="tns:CrearCatalogoDesarrolloResponse"/>
+      <wsdl:fault name="excepcion" message="tns:CrearCatalogoDesarrolloExcepcion"/>
+    </wsdl:operation>
+<!--CatalogoLenguaje-->
+    <wsdl:operation name="CrearCatalogoLenguaje">
+      <wsdl:input name="CrearCatalogoLenguajeRequest" message="tns:CrearCatalogoLenguajeRequest"/>
+      <wsdl:output name="CrearCatalogoLenguajeResponse" message="tns:CrearCatalogoLenguajeResponse"/>
+      <wsdl:fault name="excepcion" message="tns:CrearCatalogoDesarrolloExcepcion"/>
+    </wsdl:operation>
+<!--CatalogoMoneda-->
+    <wsdl:operation name="CrearCatalogoMoneda">
+      <wsdl:input name="CrearCatalogoMonedaRequest" message="tns:CrearCatalogoMonedaRequest"/>
+      <wsdl:output name="CrearCatalogoMonedaResponse" message="tns:CrearCatalogoMonedaResponse"/>
+      <wsdl:fault name="excepcion" message="tns:CrearCatalogoMonedaExcepcion"/>
+    </wsdl:operation>
+<!--CatalogoCategoria-->
+    <wsdl:operation name="CrearCatalogoCategoria">
+      <wsdl:input name="CrearCatalogoCategoriaRequest" message="tns:CrearCatalogoCategoriaRequest"/>
+      <wsdl:output name="CrearCatalogoCategoriaResponse" message="tns:CrearCatalogoCategoriaResponse"/>
+      <wsdl:fault name="excepcion" message="tns:CrearCatalogoCategoriaExcepcion"/>
+    </wsdl:operation>
+<!--CatalogoCalificacion-->
+    <wsdl:operation name="CrearCatalogoCalificacion">
+      <wsdl:input name="CrearCatalogoCalificacionRequest" message="tns:CrearCatalogoCalificacionRequest"/>
+      <wsdl:output name="CrearCatalogoCalificacionResponse" message="tns:CrearCatalogoCalificacionResponse"/>
+      <wsdl:fault name="excepcion" message="tns:CrearCatalogoCalificacionExcepcion"/>
+    </wsdl:operation>
+<!--CatalogoCuenta-->
+    <wsdl:operation name="CrearCatalogoCuenta">
+      <wsdl:input name="CrearCatalogoCuentaRequest" message="tns:CrearCatalogoCuentaRequest"/>
+      <wsdl:output name="CrearCatalogoCuentaResponse" message="tns:CrearCatalogoCuentaResponse"/>
+      <wsdl:fault name="excepcion" message="tns:CrearCatalogoCuentaExcepcion"/>
+    </wsdl:operation>
+
+<!--CatalogoRoles-->
+    <wsdl:operation name="ConsultarCatalogoRol">
+      <wsdl:input name="ConsultarCatalogoRolRequest" message="tns:ConsultarCatalogoRolRequest"/>
+      <wsdl:output name="ConsultarCatalogoRolResponse" message="tns:ConsultarCatalogoRolResponse"/>
+      <wsdl:fault name="excepcion" message="tns:ConsultarCatalogoRolExcepcion"/>
+    </wsdl:operation>
+<!--CatalogoPago-->
+    <wsdl:operation name="ConsultarCatalogoPago">
+      <wsdl:input name="ConsultarCatalogoPagoRequest" message="tns:ConsultarCatalogoPagoRequest"/>
+      <wsdl:output name="ConsultarCatalogoPagoResponse" message="tns:ConsultarCatalogoPagoResponse"/>
+      <wsdl:fault name="excepcion" message="tns:ConsultarCatalogoPagoExcepcion"/>
+    </wsdl:operation>
+<!--CatalogoDesarrollo-->
+    <wsdl:operation name="ConsultarCatalogoDesarrollo">
+      <wsdl:input name="ConsultarCatalogoDesarrolloRequest" message="tns:ConsultarCatalogoDesarrolloRequest"/>
+      <wsdl:output name="ConsultarCatalogoDesarrolloResponse" message="tns:ConsultarCatalogoDesarrolloResponse"/>
+      <wsdl:fault name="excepcion" message="tns:ConsultarCatalogoDesarrolloExcepcion"/>
+    </wsdl:operation>
+<!--CatalogoLenguaje-->
+    <wsdl:operation name="ConsultarCatalogoLenguaje">
+      <wsdl:input name="ConsultarCatalogoLenguajeRequest" message="tns:ConsultarCatalogoLenguajeRequest"/>
+      <wsdl:output name="ConsultarCatalogoLenguajeResponse" message="tns:ConsultarCatalogoLenguajeResponse"/>
+      <wsdl:fault name="excepcion" message="tns:ConsultarCatalogoDesarrolloExcepcion"/>
+    </wsdl:operation>
+<!--CatalogoMoneda-->
+    <wsdl:operation name="ConsultarCatalogoMoneda">
+      <wsdl:input name="ConsultarCatalogoMonedaRequest" message="tns:ConsultarCatalogoMonedaRequest"/>
+      <wsdl:output name="ConsultarCatalogoMonedaResponse" message="tns:ConsultarCatalogoMonedaResponse"/>
+      <wsdl:fault name="excepcion" message="tns:ConsultarCatalogoMonedaExcepcion"/>
+    </wsdl:operation>
+<!--CatalogoCategoria-->
+    <wsdl:operation name="ConsultarCatalogoCategoria">
+      <wsdl:input name="ConsultarCatalogoCategoriaRequest" message="tns:ConsultarCatalogoCategoriaRequest"/>
+      <wsdl:output name="ConsultarCatalogoCategoriaResponse" message="tns:ConsultarCatalogoCategoriaResponse"/>
+      <wsdl:fault name="excepcion" message="tns:ConsultarCatalogoCategoriaExcepcion"/>
+    </wsdl:operation>
+<!--CatalogoCalificacion-->
+    <wsdl:operation name="ConsultarCatalogoCalificacion">
+      <wsdl:input name="ConsultarCatalogoCalificacionRequest" message="tns:ConsultarCatalogoCalificacionRequest"/>
+      <wsdl:output name="ConsultarCatalogoCalificacionResponse" message="tns:ConsultarCatalogoCalificacionResponse"/>
+      <wsdl:fault name="excepcion" message="tns:ConsultarCatalogoCalificacionExcepcion"/>
+    </wsdl:operation>
+<!--CatalogoCuenta-->
+    <wsdl:operation name="ConsultarCatalogoCuenta">
+      <wsdl:input name="ConsultarCatalogoCuentaRequest" message="tns:ConsultarCatalogoCuentaRequest"/>
+      <wsdl:output name="ConsultarCatalogoCuentaResponse" message="tns:ConsultarCatalogoCuentaResponse"/>
+      <wsdl:fault name="excepcion" message="tns:ConsultarCatalogoCuentaExcepcion"/>
+    </wsdl:operation>
+
+<!--CatalogoRoles-->
+    <wsdl:operation name="ModificarCatalogoRol">
+      <wsdl:input name="ModificarCatalogoRolRequest" message="tns:ModificarCatalogoRolRequest"/>
+      <wsdl:output name="ModificarCatalogoRolResponse" message="tns:ModificarCatalogoRolResponse"/>
+      <wsdl:fault name="excepcion" message="tns:ModificarCatalogoRolExcepcion"/>
+    </wsdl:operation>
+<!--CatalogoPago-->
+    <wsdl:operation name="ModificarCatalogoPago">
+      <wsdl:input name="ModificarCatalogoPagoRequest" message="tns:ModificarCatalogoPagoRequest"/>
+      <wsdl:output name="ModificarCatalogoPagoResponse" message="tns:ModificarCatalogoPagoResponse"/>
+      <wsdl:fault name="excepcion" message="tns:ModificarCatalogoPagoExcepcion"/>
+    </wsdl:operation>
+<!--CatalogoDesarrollo-->
+    <wsdl:operation name="ModificarCatalogoDesarrollo">
+      <wsdl:input name="ModificarCatalogoDesarrolloRequest" message="tns:ModificarCatalogoDesarrolloRequest"/>
+      <wsdl:output name="ModificarCatalogoDesarrolloResponse" message="tns:ModificarCatalogoDesarrolloResponse"/>
+      <wsdl:fault name="excepcion" message="tns:ModificarCatalogoDesarrolloExcepcion"/>
+    </wsdl:operation>
+<!--CatalogoLenguaje-->
+    <wsdl:operation name="ModificarCatalogoLenguaje">
+      <wsdl:input name="ModificarCatalogoLenguajeRequest" message="tns:ModificarCatalogoLenguajeRequest"/>
+      <wsdl:output name="ModificarCatalogoLenguajeResponse" message="tns:ModificarCatalogoLenguajeResponse"/>
+      <wsdl:fault name="excepcion" message="tns:ModificarCatalogoDesarrolloExcepcion"/>
+    </wsdl:operation>
+<!--CatalogoMoneda-->
+    <wsdl:operation name="ModificarCatalogoMoneda">
+      <wsdl:input name="ModificarCatalogoMonedaRequest" message="tns:ModificarCatalogoMonedaRequest"/>
+      <wsdl:output name="ModificarCatalogoMonedaResponse" message="tns:ModificarCatalogoMonedaResponse"/>
+      <wsdl:fault name="excepcion" message="tns:ModificarCatalogoMonedaExcepcion"/>
+    </wsdl:operation>
+<!--CatalogoCategoria-->
+    <wsdl:operation name="ModificarCatalogoCategoria">
+      <wsdl:input name="ModificarCatalogoCategoriaRequest" message="tns:ModificarCatalogoCategoriaRequest"/>
+      <wsdl:output name="ModificarCatalogoCategoriaResponse" message="tns:ModificarCatalogoCategoriaResponse"/>
+      <wsdl:fault name="excepcion" message="tns:ModificarCatalogoCategoriaExcepcion"/>
+    </wsdl:operation>
+<!--CatalogoCalificacion-->
+    <wsdl:operation name="ModificarCatalogoCalificacion">
+      <wsdl:input name="ModificarCatalogoCalificacionRequest" message="tns:ModificarCatalogoCalificacionRequest"/>
+      <wsdl:output name="ModificarCatalogoCalificacionResponse" message="tns:ModificarCatalogoCalificacionResponse"/>
+      <wsdl:fault name="excepcion" message="tns:ModificarCatalogoCalificacionExcepcion"/>
+    </wsdl:operation>
+<!--CatalogoCuenta-->
+    <wsdl:operation name="ModificarCatalogoCuenta">
+      <wsdl:input name="ModificarCatalogoCuentaRequest" message="tns:ModificarCatalogoCuentaRequest"/>
+      <wsdl:output name="ModificarCatalogoCuentaResponse" message="tns:ModificarCatalogoCuentaResponse"/>
+      <wsdl:fault name="excepcion" message="tns:ModificarCatalogoCuentaExcepcion"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  
+  <wsdl:binding name="CatalogosCorporativosSOAP" type="tns:CatalogosCorporativos">
+    <soap11:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+
+<!--CatalogoRoles-->
+    <wsdl:operation name="CrearCatalogoRol">
+      <soap11:operation soapAction="" style="document"/>
+      <wsdl:input name="CrearCatalogoRolRequest">
+        <soap11:body parts="request" use="literal"/>
+        <soap11:header message="tns:CrearCatalogoRolRequest" part="requestHeader" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="CrearCatalogoRolResponse">
+        <soap11:body parts="response" use="literal"/>
+        <soap11:header message="tns:CrearCatalogoRolResponse" part="responseHeader" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="excepcion">
+        <soap11:fault name="excepcion" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+<!--CatalogoPago-->
+    <wsdl:operation name="CrearCatalogoPago">
+      <soap11:operation soapAction="" style="document"/>
+      <wsdl:input name="CrearCatalogoPagoRequest">
+        <soap11:body parts="request" use="literal"/>
+        <soap11:header message="tns:CrearCatalogoPagoRequest" part="requestHeader" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="CrearCatalogoPagoResponse">
+        <soap11:body parts="response" use="literal"/>
+        <soap11:header message="tns:CrearCatalogoPagoResponse" part="responseHeader" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="excepcion">
+        <soap11:fault name="excepcion" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+<!--CatalogoDesarrollo-->
+    <wsdl:operation name="CrearCatalogoDesarrollo">
+      <soap11:operation soapAction="" style="document"/>
+      <wsdl:input name="CrearCatalogoDesarrolloRequest">
+        <soap11:body parts="request" use="literal"/>
+        <soap11:header message="tns:CrearCatalogoDesarrolloRequest" part="requestHeader" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="CrearCatalogoDesarrolloResponse">
+        <soap11:body parts="response" use="literal"/>
+        <soap11:header message="tns:CrearCatalogoDesarrolloResponse" part="responseHeader" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="excepcion">
+        <soap11:fault name="excepcion" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+<!--CatalogoLenguaje-->
+    <wsdl:operation name="CrearCatalogoLenguaje">
+      <soap11:operation soapAction="" style="document"/>
+      <wsdl:input name="CrearCatalogoLenguajeRequest">
+        <soap11:body parts="request" use="literal"/>
+        <soap11:header message="tns:CrearCatalogoLenguajeRequest" part="requestHeader" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="CrearCatalogoLenguajeResponse">
+        <soap11:body parts="response" use="literal"/>
+        <soap11:header message="tns:CrearCatalogoLenguajeResponse" part="responseHeader" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="excepcion">
+        <soap11:fault name="excepcion" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+<!--CatalogoMoneda-->
+    <wsdl:operation name="CrearCatalogoMoneda">
+      <soap11:operation soapAction="" style="document"/>
+      <wsdl:input name="CrearCatalogoMonedaRequest">
+        <soap11:body parts="request" use="literal"/>
+        <soap11:header message="tns:CrearCatalogoMonedaRequest" part="requestHeader" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="CrearCatalogoMonedaResponse">
+        <soap11:body parts="response" use="literal"/>
+        <soap11:header message="tns:CrearCatalogoMonedaResponse" part="responseHeader" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="excepcion">
+        <soap11:fault name="excepcion" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+<!--CatalogoCategoria-->
+    <wsdl:operation name="CrearCatalogoCategoria">
+      <soap11:operation soapAction="" style="document"/>
+      <wsdl:input name="CrearCatalogoCategoriaRequest">
+        <soap11:body parts="request" use="literal"/>
+        <soap11:header message="tns:CrearCatalogoCategoriaRequest" part="requestHeader" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="CrearCatalogoCategoriaResponse">
+        <soap11:body parts="response" use="literal"/>
+        <soap11:header message="tns:CrearCatalogoCategoriaResponse" part="responseHeader" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="excepcion">
+        <soap11:fault name="excepcion" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+<!--CatalogoCalificacion-->
+    <wsdl:operation name="CrearCatalogoCalificacion">
+      <soap11:operation soapAction="" style="document"/>
+      <wsdl:input name="CrearCatalogoCalificacionRequest">
+        <soap11:body parts="request" use="literal"/>
+        <soap11:header message="tns:CrearCatalogoCalificacionRequest" part="requestHeader" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="CrearCatalogoCalificacionResponse">
+        <soap11:body parts="response" use="literal"/>
+        <soap11:header message="tns:CrearCatalogoCalificacionResponse" part="responseHeader" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="excepcion">
+        <soap11:fault name="excepcion" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+<!--CatalogoCuenta-->
+    <wsdl:operation name="CrearCatalogoCuenta">
+      <soap11:operation soapAction="" style="document"/>
+      <wsdl:input name="CrearCatalogoCuentaRequest">
+        <soap11:body parts="request" use="literal"/>
+        <soap11:header message="tns:CrearCatalogoCuentaRequest" part="requestHeader" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="CrearCatalogoCuentaResponse">
+        <soap11:body parts="response" use="literal"/>
+        <soap11:header message="tns:CrearCatalogoCuentaResponse" part="responseHeader" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="excepcion">
+        <soap11:fault name="excepcion" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+	<!--CatalogoRoles-->
+    <wsdl:operation name="ConsultarCatalogoRol">
+      <soap11:operation soapAction="" style="document"/>
+      <wsdl:input name="ConsultarCatalogoRolRequest">
+        <soap11:body parts="request" use="literal"/>
+        <soap11:header message="tns:ConsultarCatalogoRolRequest" part="requestHeader" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ConsultarCatalogoRolResponse">
+        <soap11:body parts="response" use="literal"/>
+        <soap11:header message="tns:ConsultarCatalogoRolResponse" part="responseHeader" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="excepcion">
+        <soap11:fault name="excepcion" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+<!--CatalogoPago-->
+    <wsdl:operation name="ConsultarCatalogoPago">
+      <soap11:operation soapAction="" style="document"/>
+      <wsdl:input name="ConsultarCatalogoPagoRequest">
+        <soap11:body parts="request" use="literal"/>
+        <soap11:header message="tns:ConsultarCatalogoPagoRequest" part="requestHeader" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ConsultarCatalogoPagoResponse">
+        <soap11:body parts="response" use="literal"/>
+        <soap11:header message="tns:ConsultarCatalogoPagoResponse" part="responseHeader" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="excepcion">
+        <soap11:fault name="excepcion" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+<!--CatalogoDesarrollo-->
+    <wsdl:operation name="ConsultarCatalogoDesarrollo">
+      <soap11:operation soapAction="" style="document"/>
+      <wsdl:input name="ConsultarCatalogoDesarrolloRequest">
+        <soap11:body parts="request" use="literal"/>
+        <soap11:header message="tns:ConsultarCatalogoDesarrolloRequest" part="requestHeader" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ConsultarCatalogoDesarrolloResponse">
+        <soap11:body parts="response" use="literal"/>
+        <soap11:header message="tns:ConsultarCatalogoDesarrolloResponse" part="responseHeader" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="excepcion">
+        <soap11:fault name="excepcion" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+<!--CatalogoLenguaje-->
+    <wsdl:operation name="ConsultarCatalogoLenguaje">
+      <soap11:operation soapAction="" style="document"/>
+      <wsdl:input name="ConsultarCatalogoLenguajeRequest">
+        <soap11:body parts="request" use="literal"/>
+        <soap11:header message="tns:ConsultarCatalogoLenguajeRequest" part="requestHeader" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ConsultarCatalogoLenguajeResponse">
+        <soap11:body parts="response" use="literal"/>
+        <soap11:header message="tns:ConsultarCatalogoLenguajeResponse" part="responseHeader" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="excepcion">
+        <soap11:fault name="excepcion" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+<!--CatalogoMoneda-->
+    <wsdl:operation name="ConsultarCatalogoMoneda">
+      <soap11:operation soapAction="" style="document"/>
+      <wsdl:input name="ConsultarCatalogoMonedaRequest">
+        <soap11:body parts="request" use="literal"/>
+        <soap11:header message="tns:ConsultarCatalogoMonedaRequest" part="requestHeader" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ConsultarCatalogoMonedaResponse">
+        <soap11:body parts="response" use="literal"/>
+        <soap11:header message="tns:ConsultarCatalogoMonedaResponse" part="responseHeader" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="excepcion">
+        <soap11:fault name="excepcion" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+<!--CatalogoCategoria-->
+    <wsdl:operation name="ConsultarCatalogoCategoria">
+      <soap11:operation soapAction="" style="document"/>
+      <wsdl:input name="ConsultarCatalogoCategoriaRequest">
+        <soap11:body parts="request" use="literal"/>
+        <soap11:header message="tns:ConsultarCatalogoCategoriaRequest" part="requestHeader" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ConsultarCatalogoCategoriaResponse">
+        <soap11:body parts="response" use="literal"/>
+        <soap11:header message="tns:ConsultarCatalogoCategoriaResponse" part="responseHeader" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="excepcion">
+        <soap11:fault name="excepcion" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+<!--CatalogoCalificacion-->
+    <wsdl:operation name="ConsultarCatalogoCalificacion">
+      <soap11:operation soapAction="" style="document"/>
+      <wsdl:input name="ConsultarCatalogoCalificacionRequest">
+        <soap11:body parts="request" use="literal"/>
+        <soap11:header message="tns:ConsultarCatalogoCalificacionRequest" part="requestHeader" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ConsultarCatalogoCalificacionResponse">
+        <soap11:body parts="response" use="literal"/>
+        <soap11:header message="tns:ConsultarCatalogoCalificacionResponse" part="responseHeader" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="excepcion">
+        <soap11:fault name="excepcion" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+<!--CatalogoCuenta-->
+    <wsdl:operation name="ConsultarCatalogoCuenta">
+      <soap11:operation soapAction="" style="document"/>
+      <wsdl:input name="ConsultarCatalogoCuentaRequest">
+        <soap11:body parts="request" use="literal"/>
+        <soap11:header message="tns:ConsultarCatalogoCuentaRequest" part="requestHeader" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ConsultarCatalogoCuentaResponse">
+        <soap11:body parts="response" use="literal"/>
+        <soap11:header message="tns:ConsultarCatalogoCuentaResponse" part="responseHeader" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="excepcion">
+        <soap11:fault name="excepcion" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+<!--CatalogoRoles-->
+    <wsdl:operation name="ModificarCatalogoRol">
+      <soap11:operation soapAction="" style="document"/>
+      <wsdl:input name="ModificarCatalogoRolRequest">
+        <soap11:body parts="request" use="literal"/>
+        <soap11:header message="tns:ModificarCatalogoRolRequest" part="requestHeader" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ModificarCatalogoRolResponse">
+        <soap11:body parts="response" use="literal"/>
+        <soap11:header message="tns:ModificarCatalogoRolResponse" part="responseHeader" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="excepcion">
+        <soap11:fault name="excepcion" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+<!--CatalogoPago-->
+    <wsdl:operation name="ModificarCatalogoPago">
+      <soap11:operation soapAction="" style="document"/>
+      <wsdl:input name="ModificarCatalogoPagoRequest">
+        <soap11:body parts="request" use="literal"/>
+        <soap11:header message="tns:ModificarCatalogoPagoRequest" part="requestHeader" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ModificarCatalogoPagoResponse">
+        <soap11:body parts="response" use="literal"/>
+        <soap11:header message="tns:ModificarCatalogoPagoResponse" part="responseHeader" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="excepcion">
+        <soap11:fault name="excepcion" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+<!--CatalogoDesarrollo-->
+    <wsdl:operation name="ModificarCatalogoDesarrollo">
+      <soap11:operation soapAction="" style="document"/>
+      <wsdl:input name="ModificarCatalogoDesarrolloRequest">
+        <soap11:body parts="request" use="literal"/>
+        <soap11:header message="tns:ModificarCatalogoDesarrolloRequest" part="requestHeader" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ModificarCatalogoDesarrolloResponse">
+        <soap11:body parts="response" use="literal"/>
+        <soap11:header message="tns:ModificarCatalogoDesarrolloResponse" part="responseHeader" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="excepcion">
+        <soap11:fault name="excepcion" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+<!--CatalogoLenguaje-->
+    <wsdl:operation name="ModificarCatalogoLenguaje">
+      <soap11:operation soapAction="" style="document"/>
+      <wsdl:input name="ModificarCatalogoLenguajeRequest">
+        <soap11:body parts="request" use="literal"/>
+        <soap11:header message="tns:ModificarCatalogoLenguajeRequest" part="requestHeader" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ModificarCatalogoLenguajeResponse">
+        <soap11:body parts="response" use="literal"/>
+        <soap11:header message="tns:ModificarCatalogoLenguajeResponse" part="responseHeader" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="excepcion">
+        <soap11:fault name="excepcion" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+<!--CatalogoMoneda-->
+    <wsdl:operation name="ModificarCatalogoMoneda">
+      <soap11:operation soapAction="" style="document"/>
+      <wsdl:input name="ModificarCatalogoMonedaRequest">
+        <soap11:body parts="request" use="literal"/>
+        <soap11:header message="tns:ModificarCatalogoMonedaRequest" part="requestHeader" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ModificarCatalogoMonedaResponse">
+        <soap11:body parts="response" use="literal"/>
+        <soap11:header message="tns:ModificarCatalogoMonedaResponse" part="responseHeader" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="excepcion">
+        <soap11:fault name="excepcion" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+<!--CatalogoCategoria-->
+    <wsdl:operation name="ModificarCatalogoCategoria">
+      <soap11:operation soapAction="" style="document"/>
+      <wsdl:input name="ModificarCatalogoCategoriaRequest">
+        <soap11:body parts="request" use="literal"/>
+        <soap11:header message="tns:ModificarCatalogoCategoriaRequest" part="requestHeader" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ModificarCatalogoCategoriaResponse">
+        <soap11:body parts="response" use="literal"/>
+        <soap11:header message="tns:ModificarCatalogoCategoriaResponse" part="responseHeader" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="excepcion">
+        <soap11:fault name="excepcion" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+<!--CatalogoCalificacion-->
+    <wsdl:operation name="ModificarCatalogoCalificacion">
+      <soap11:operation soapAction="" style="document"/>
+      <wsdl:input name="ModificarCatalogoCalificacionRequest">
+        <soap11:body parts="request" use="literal"/>
+        <soap11:header message="tns:ModificarCatalogoCalificacionRequest" part="requestHeader" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ModificarCatalogoCalificacionResponse">
+        <soap11:body parts="response" use="literal"/>
+        <soap11:header message="tns:ModificarCatalogoCalificacionResponse" part="responseHeader" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="excepcion">
+        <soap11:fault name="excepcion" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+<!--CatalogoCuenta-->
+    <wsdl:operation name="ModificarCatalogoCuenta">
+      <soap11:operation soapAction="" style="document"/>
+      <wsdl:input name="ModificarCatalogoCuentaRequest">
+        <soap11:body parts="request" use="literal"/>
+        <soap11:header message="tns:ModificarCatalogoCuentaRequest" part="requestHeader" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ModificarCatalogoCuentaResponse">
+        <soap11:body parts="response" use="literal"/>
+        <soap11:header message="tns:ModificarCatalogoCuentaResponse" part="responseHeader" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="excepcion">
+        <soap11:fault name="excepcion" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  
+  <wsdl:service name="CatalogosCorporativos">
+    <wsdl:port name="CatalogosCorporativosHttpPort" binding="tns:CatalogosCorporativosSOAP">
+      <soap11:address location="http://localhost:8087/AllShopWeb/ws/CatalogosCorporativosService.wsdl"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

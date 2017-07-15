@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+xmlns:tns="http://www.allshop.com/framework/core/ws/CatalogosCorporativos" 
+targetNamespace="http://www.allshop.com/framework/core/ws/CatalogosCorporativos" 
+xmlns:tnsc="http://www.allshop.com/framework/core/ws/common/ElementosComunes"
+elementFormDefault="qualified" version="1.0">
+   <xsd:annotation>
+      <xsd:documentation xml:lang="es">TRANSACCION: AS02
+			DESCRIPCION: Catalogos Corporativos
+			PROGRAMADOR: Omar Santiago Romulo
+			EMPRESA: allshop
+			FECHA: 04-07-2017</xsd:documentation>
+   </xsd:annotation>
+    <xsd:import schemaLocation="ElementosComunes.xsd" namespace="http://www.allshop.com/framework/core/ws/common/ElementosComunes"/>
+   <xsd:complexType name="CatalogoRol">
+      <xsd:sequence>
+         <xsd:element maxOccurs="1" minOccurs="1" name="LangTpCd">
+            <xsd:annotation>
+               <xsd:documentation>LANG_TP_CD</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+               <xsd:restriction base="xsd:string">
+                  <xsd:minLength value="5" />
+                  <xsd:maxLength value="50" />
+               </xsd:restriction>
+            </xsd:simpleType>
+         </xsd:element>
+         <xsd:element maxOccurs="1" minOccurs="1" name="IdRol">
+            <xsd:annotation>
+               <xsd:documentation>ID_ROL</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+               <xsd:restriction base="xsd:string">
+                  <xsd:minLength value="5" />
+                  <xsd:maxLength value="50" />
+               </xsd:restriction>
+            </xsd:simpleType>
+         </xsd:element>
+         <xsd:element maxOccurs="1" minOccurs="1" name="DescRol">
+            <xsd:annotation>
+               <xsd:documentation>DESC_ROL</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+               <xsd:restriction base="xsd:string">
+                  <xsd:minLength value="5" />
+                  <xsd:maxLength value="50" />
+               </xsd:restriction>
+            </xsd:simpleType>
+         </xsd:element>
+         <xsd:element name="ElementosComunes" type="tnsc:ElementosComunes" minOccurs="1" maxOccurs="1" />
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="CatalogoPago">
+      <xsd:sequence>
+         <xsd:element maxOccurs="1" minOccurs="1" name="LangTpCd">
+            <xsd:annotation>
+               <xsd:documentation>LANG_TP_CD</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+               <xsd:restriction base="xsd:string">
+                  <xsd:minLength value="1" />
+                  <xsd:maxLength value="10" />
+               </xsd:restriction>
+            </xsd:simpleType>
+         </xsd:element>
+         <xsd:element maxOccurs="1" minOccurs="1" name="IdPago">
+            <xsd:annotation>
+               <xsd:documentation>ID_PAGO</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+               <xsd:restriction base="xsd:string">
+                  <xsd:minLength value="5" />
+                  <xsd:maxLength value="50" />
+               </xsd:restriction>
+            </xsd:simpleType>
+         </xsd:element>
+         <xsd:element maxOccurs="1" minOccurs="1" name="CodPago">
+            <xsd:annotation>
+               <xsd:documentation>COD_PAGO</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+               <xsd:restriction base="xsd:string">
+                  <xsd:minLength value="5" />
+                  <xsd:maxLength value="50" />
+               </xsd:restriction>
+            </xsd:simpleType>
+         </xsd:element>
+         <xsd:element maxOccurs="1" minOccurs="1" name="DescPago">
+            <xsd:annotation>
+               <xsd:documentation>DESC_PAGO</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+               <xsd:restriction base="xsd:string">
+                  <xsd:minLength value="5" />
+                  <xsd:maxLength value="50" />
+               </xsd:restriction>
+            </xsd:simpleType>
+         </xsd:element>
+         <xsd:element name="ElementosComunes" type="tnsc:ElementosComunes" minOccurs="1" maxOccurs="1" />
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="CatalogoDesarrollo">
+      <xsd:sequence>
+         <xsd:element maxOccurs="1" minOccurs="1" name="LangTpCd">
+            <xsd:annotation>
+               <xsd:documentation>LANG_TP_CD</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+               <xsd:restriction base="xsd:string">
+                  <xsd:minLength value="5" />
+                  <xsd:maxLength value="50" />
+               </xsd:restriction>
+            </xsd:simpleType>
+         </xsd:element>
+         <xsd:element maxOccurs="1" minOccurs="1" name="IdDesarrollo">
+            <xsd:annotation>
+               <xsd:documentation>ID_DESARROLLO</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+               <xsd:restriction base="xsd:string">
+                  <xsd:minLength value="5" />
+                  <xsd:maxLength value="50" />
+               </xsd:restriction>
+            </xsd:simpleType>
+         </xsd:element>
+         <xsd:element maxOccurs="1" minOccurs="1" name="CodDesarrollo">
+            <xsd:annotation>
+               <xsd:documentation>COD_DESARROLLO</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+               <xsd:restriction base="xsd:string">
+                  <xsd:minLength value="5" />
+                  <xsd:maxLength value="50" />
+               </xsd:restriction>
+            </xsd:simpleType>
+         </xsd:element>
+         <xsd:element maxOccurs="1" minOccurs="1" name="DescDesarrollo">
+            <xsd:annotation>
+               <xsd:documentation>DESC_DESARROLLO</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+               <xsd:restriction base="xsd:string">
+                  <xsd:minLength value="5" />
+                  <xsd:maxLength value="50" />
+               </xsd:restriction>
+            </xsd:simpleType>
+         </xsd:element>
+         <xsd:element name="ElementosComunes" type="tnsc:ElementosComunes" minOccurs="1" maxOccurs="1" />
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="CatalogoLenguaje">
+      <xsd:sequence>
+         <xsd:element maxOccurs="1" minOccurs="1" name="LangTpCd">
+            <xsd:annotation>
+               <xsd:documentation>LANG_TP_CD</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+               <xsd:restriction base="xsd:string">
+                  <xsd:minLength value="5" />
+                  <xsd:maxLength value="50" />
+               </xsd:restriction>
+            </xsd:simpleType>
+         </xsd:element>
+         <xsd:element maxOccurs="1" minOccurs="1" name="IdLenguaje">
+            <xsd:annotation>
+               <xsd:documentation>ID_LENGUAJE</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+               <xsd:restriction base="xsd:string">
+                  <xsd:minLength value="5" />
+                  <xsd:maxLength value="50" />
+               </xsd:restriction>
+            </xsd:simpleType>
+         </xsd:element>
+         <xsd:element maxOccurs="1" minOccurs="1" name="DescLenguaje">
+            <xsd:annotation>
+               <xsd:documentation>DESC_LENGUAJE</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+               <xsd:restriction base="xsd:string">
+                  <xsd:minLength value="5" />
+                  <xsd:maxLength value="50" />
+               </xsd:restriction>
+            </xsd:simpleType>
+         </xsd:element>
+         <xsd:element name="ElementosComunes" type="tnsc:ElementosComunes" minOccurs="1" maxOccurs="1" />
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="CatalogoMoneda">
+      <xsd:sequence>
+         <xsd:element maxOccurs="1" minOccurs="1" name="LangTpCd">
+            <xsd:annotation>
+               <xsd:documentation>LANG_TP_CD</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+               <xsd:restriction base="xsd:string">
+                  <xsd:minLength value="5" />
+                  <xsd:maxLength value="50" />
+               </xsd:restriction>
+            </xsd:simpleType>
+         </xsd:element>
+         <xsd:element maxOccurs="1" minOccurs="1" name="IdMoneda">
+            <xsd:annotation>
+               <xsd:documentation>ID_MONEDA</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+               <xsd:restriction base="xsd:string">
+                  <xsd:minLength value="5" />
+                  <xsd:maxLength value="50" />
+               </xsd:restriction>
+            </xsd:simpleType>
+         </xsd:element>
+         <xsd:element maxOccurs="1" minOccurs="1" name="CodMoneda">
+            <xsd:annotation>
+               <xsd:documentation>COD_MONEDA</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+               <xsd:restriction base="xsd:string">
+                  <xsd:minLength value="5" />
+                  <xsd:maxLength value="50" />
+               </xsd:restriction>
+            </xsd:simpleType>
+         </xsd:element>
+         <xsd:element maxOccurs="1" minOccurs="1" name="DescMoneda">
+            <xsd:annotation>
+               <xsd:documentation>DESC_MONEDA</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+               <xsd:restriction base="xsd:string">
+                  <xsd:minLength value="5" />
+                  <xsd:maxLength value="50" />
+               </xsd:restriction>
+            </xsd:simpleType>
+         </xsd:element>
+         <xsd:element name="ElementosComunes" type="tnsc:ElementosComunes" minOccurs="1" maxOccurs="1" />
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="CatalogoCategoria">
+      <xsd:sequence>
+         <xsd:element maxOccurs="1" minOccurs="1" name="LangTpCd">
+            <xsd:annotation>
+               <xsd:documentation>LANG_TP_CD</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+               <xsd:restriction base="xsd:string">
+                  <xsd:minLength value="5" />
+                  <xsd:maxLength value="50" />
+               </xsd:restriction>
+            </xsd:simpleType>
+         </xsd:element>
+         <xsd:element maxOccurs="1" minOccurs="1" name="IdCategoria">
+            <xsd:annotation>
+               <xsd:documentation>ID_CATEGORIA</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+               <xsd:restriction base="xsd:string">
+                  <xsd:minLength value="5" />
+                  <xsd:maxLength value="50" />
+               </xsd:restriction>
+            </xsd:simpleType>
+         </xsd:element>
+         <xsd:element maxOccurs="1" minOccurs="1" name="DescCategoria">
+            <xsd:annotation>
+               <xsd:documentation>DESC_CATEGORIA</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+               <xsd:restriction base="xsd:string">
+                  <xsd:minLength value="5" />
+                  <xsd:maxLength value="50" />
+               </xsd:restriction>
+            </xsd:simpleType>
+         </xsd:element>
+         <xsd:element name="ElementosComunes" type="tnsc:ElementosComunes" minOccurs="1" maxOccurs="1" />
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="CatalogoCalificacion">
+      <xsd:sequence>
+         <xsd:element maxOccurs="1" minOccurs="1" name="LangTpCd">
+            <xsd:annotation>
+               <xsd:documentation>LANG_TP_CD</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+               <xsd:restriction base="xsd:string">
+                  <xsd:minLength value="5" />
+                  <xsd:maxLength value="50" />
+               </xsd:restriction>
+            </xsd:simpleType>
+         </xsd:element>
+         <xsd:element maxOccurs="1" minOccurs="1" name="IdCalificacion">
+            <xsd:annotation>
+               <xsd:documentation>ID_CALIFICACION</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+               <xsd:restriction base="xsd:string">
+                  <xsd:minLength value="5" />
+                  <xsd:maxLength value="50" />
+               </xsd:restriction>
+            </xsd:simpleType>
+         </xsd:element>
+         <xsd:element maxOccurs="1" minOccurs="1" name="DescCalificacion">
+            <xsd:annotation>
+               <xsd:documentation>DESC_CALIFICACION</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+               <xsd:restriction base="xsd:string">
+                  <xsd:minLength value="5" />
+                  <xsd:maxLength value="50" />
+               </xsd:restriction>
+            </xsd:simpleType>
+         </xsd:element>
+         <xsd:element name="ElementosComunes" type="tnsc:ElementosComunes" minOccurs="1" maxOccurs="1" />
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="CatalogoCuenta">
+      <xsd:sequence>
+         <xsd:element maxOccurs="1" minOccurs="1" name="LangTpCd">
+            <xsd:annotation>
+               <xsd:documentation>LANG_TP_CD</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+               <xsd:restriction base="xsd:string">
+                  <xsd:minLength value="5" />
+                  <xsd:maxLength value="50" />
+               </xsd:restriction>
+            </xsd:simpleType>
+         </xsd:element>
+         <xsd:element maxOccurs="1" minOccurs="1" name="IdCuenta">
+            <xsd:annotation>
+               <xsd:documentation>ID_CUENTA</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+               <xsd:restriction base="xsd:string">
+                  <xsd:minLength value="5" />
+                  <xsd:maxLength value="50" />
+               </xsd:restriction>
+            </xsd:simpleType>
+         </xsd:element>
+         <xsd:element maxOccurs="1" minOccurs="1" name="DescCuenta">
+            <xsd:annotation>
+               <xsd:documentation>DESC_CUENTA</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+               <xsd:restriction base="xsd:string">
+                  <xsd:minLength value="5" />
+                  <xsd:maxLength value="50" />
+               </xsd:restriction>
+            </xsd:simpleType>
+         </xsd:element>
+         <xsd:element name="ElementosComunes" type="tnsc:ElementosComunes" minOccurs="1" maxOccurs="1" />
+      </xsd:sequence>
+   </xsd:complexType>
+</xsd:schema>

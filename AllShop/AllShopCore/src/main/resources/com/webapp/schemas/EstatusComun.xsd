@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+xmlns:tns="http://www.allshop.com/framework/core/ws/common/EstatusComunes" 
+targetNamespace="http://www.allshop.com/framework/core/ws/common/EstatusComunes" 
+elementFormDefault="qualified" version="1.0">
+   <xsd:annotation>
+      <xsd:documentation xml:lang="es">TRANSACCION: AS02
+DESCRIPCION: Catalogos Corporativos
+PROGRAMADOR: Omar Santiago Romulo
+EMPRESA: allshop
+FECHA: 04-07-2017</xsd:documentation>
+   </xsd:annotation>
+   <xsd:complexType name="EstatusComun">
+      <xsd:sequence>
+         <xsd:element maxOccurs="1" minOccurs="1" name="Estatus">
+            <xsd:annotation>
+               <xsd:documentation>Estatus</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+               <xsd:restriction base="xsd:string">
+                  <xsd:minLength value="1" />
+                  <xsd:maxLength value="10" />
+               </xsd:restriction>
+            </xsd:simpleType>
+         </xsd:element>
+         <xsd:element maxOccurs="1" minOccurs="1" name="Descripcion">
+            <xsd:annotation>
+               <xsd:documentation>Descripcion</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+               <xsd:restriction base="xsd:string">
+                  <xsd:minLength value="5" />
+                  <xsd:maxLength value="50" />
+               </xsd:restriction>
+            </xsd:simpleType>
+         </xsd:element>
+      </xsd:sequence>
+   </xsd:complexType>
+</xsd:schema>

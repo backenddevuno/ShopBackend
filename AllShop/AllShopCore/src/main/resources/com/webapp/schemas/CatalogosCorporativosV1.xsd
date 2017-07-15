@@ -1,0 +1,641 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://www.allshop.com/framework/core/ws/CatalogosCorporativos"
+	xmlns:tnsec="http://www.allshop.com/framework/core/ws/common/EstatusComunes"
+	targetNamespace="http://www.allshop.com/framework/core/ws/CatalogosCorporativos"
+	elementFormDefault="qualified" version="1.0">
+	<xsd:annotation>
+		<xsd:documentation xml:lang="es">TRANSACCION: AS02
+			DESCRIPCION: Catalogos Corporativos
+			PROGRAMADOR: Omar Santiago Romulo
+			EMPRESA: allshop
+			FECHA: 04-07-2017
+		</xsd:documentation>
+	</xsd:annotation>
+	<xsd:include schemaLocation="CatalogosCorporativosDetalles.xsd" />
+	<xsd:import schemaLocation="EstatusComun.xsd"
+		namespace="http://www.allshop.com/framework/core/ws/common/EstatusComunes" />
+
+	<xsd:element name="CrearCatalogoRolIn">
+		<xsd:annotation>
+			<xsd:documentation>CrearCatalogoRolIn</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element maxOccurs="1" minOccurs="1" name="CatalogoRol"
+					type="tns:CatalogoRol" />
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="CrearCatalogoRolOut">
+		<xsd:annotation>
+			<xsd:documentation>CrearCatalogoRolOutType</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element maxOccurs="1" minOccurs="1" name="EstatusComun"
+					type="tnsec:EstatusComun" />
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<!-- <xsd:element name="CrearCatalogoRolIn" type="tns:CrearCatalogoRolInType" 
+		/> -->
+	<!-- <xsd:element name="CrearCatalogoRolOut" type="tns:CrearCatalogoRolOutType" 
+		/> -->
+
+	<xsd:complexType name="CrearCatalogoPagoInType">
+		<xsd:annotation>
+			<xsd:documentation>CrearCatalogoPagoInType</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="CatalogoPago"
+				type="tns:CatalogoPago" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CrearCatalogoPagoOutType">
+		<xsd:annotation>
+			<xsd:documentation>CrearCatalogoPagoOutType</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="EstatusComun"
+				type="tnsec:EstatusComun" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="CrearCatalogoDesarrolloInType">
+		<xsd:annotation>
+			<xsd:documentation>CrearCatalogoDesarrolloInType</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="CatalogoDesarrollo"
+				type="tns:CatalogoDesarrollo" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CrearCatalogoDesarrolloOutType">
+		<xsd:annotation>
+			<xsd:documentation>CrearCatalogoDesarrolloOutType</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="EstatusComun"
+				type="tnsec:EstatusComun" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="CrearCatalogoLenguajeInType">
+		<xsd:annotation>
+			<xsd:documentation>CrearCatalogoLenguajeInType</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="CatalogoLenguaje"
+				type="tns:CatalogoLenguaje" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CrearCatalogoLenguajeOutType">
+		<xsd:annotation>
+			<xsd:documentation>CrearCatalogoLenguajeOutType</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="EstatusComun"
+				type="tnsec:EstatusComun" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="CrearCatalogoMonedaInType">
+		<xsd:annotation>
+			<xsd:documentation>CrearCatalogoMonedaInType</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="CatalogoMoneda"
+				type="tns:CatalogoMoneda" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CrearCatalogoMonedaOutType">
+		<xsd:annotation>
+			<xsd:documentation>CrearCatalogoMonedaOutType</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="EstatusComun"
+				type="tnsec:EstatusComun" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="CrearCatalogoCategoriaInType">
+		<xsd:annotation>
+			<xsd:documentation>CrearCatalogoCategoriaInType</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="CatalogoCategoria"
+				type="tns:CatalogoCategoria" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CrearCatalogoCategoriaOutType">
+		<xsd:annotation>
+			<xsd:documentation>CrearCatalogoCategoriaOutType</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="EstatusComun"
+				type="tnsec:EstatusComun" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="CrearCatalogoCalificacionInType">
+		<xsd:annotation>
+			<xsd:documentation>CrearCatalogoCalificacionInType
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1"
+				name="CatalogoCalificacion" type="tns:CatalogoCalificacion" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CrearCatalogoCalificacionOutType">
+		<xsd:annotation>
+			<xsd:documentation>CrearCatalogoCalificacionOutType
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="EstatusComun"
+				type="tnsec:EstatusComun" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="CrearCatalogoCuentaInType">
+		<xsd:annotation>
+			<xsd:documentation>CrearCatalogoCuentaInType</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="CatalogoCuenta"
+				type="tns:CatalogoCuenta" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CrearCatalogoCuentaOutType">
+		<xsd:annotation>
+			<xsd:documentation>CrearCatalogoCuentaOutType</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="EstatusComun"
+				type="tnsec:EstatusComun" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:element name="CrearCatalogoPagoIn" type="tns:CrearCatalogoPagoInType" />
+	<xsd:element name="CrearCatalogoPagoOut" type="tns:CrearCatalogoPagoOutType" />
+	<xsd:element name="CrearCatalogoDesarrolloIn" type="tns:CrearCatalogoDesarrolloInType" />
+	<xsd:element name="CrearCatalogoDesarrolloOut" type="tns:CrearCatalogoDesarrolloOutType" />
+	<xsd:element name="CrearCatalogoLenguajeIn" type="tns:CrearCatalogoLenguajeInType" />
+	<xsd:element name="CrearCatalogoLenguajeOut" type="tns:CrearCatalogoLenguajeOutType" />
+	<xsd:element name="CrearCatalogoMonedaIn" type="tns:CrearCatalogoMonedaInType" />
+	<xsd:element name="CrearCatalogoMonedaOut" type="tns:CrearCatalogoMonedaOutType" />
+	<xsd:element name="CrearCatalogoCategoriaIn" type="tns:CrearCatalogoCategoriaInType" />
+	<xsd:element name="CrearCatalogoCategoriaOut" type="tns:CrearCatalogoCategoriaOutType" />
+	<xsd:element name="CrearCatalogoCalificacionIn" type="tns:CrearCatalogoCalificacionInType" />
+	<xsd:element name="CrearCatalogoCalificacionOut" type="tns:CrearCatalogoCalificacionOutType" />
+	<xsd:element name="CrearCatalogoCuentaIn" type="tns:CrearCatalogoCuentaInType" />
+	<xsd:element name="CrearCatalogoCuentaOut" type="tns:CrearCatalogoCuentaOutType" />
+
+	<xsd:complexType name="ConsultarCatalogoRolInType">
+		<xsd:annotation>
+			<xsd:documentation>ConsultarCatalogoRolInType</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="IdRol">
+				<xsd:annotation>
+					<xsd:documentation>ID_ROL</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:minLength value="5" />
+						<xsd:maxLength value="50" />
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ConsultarCatalogoRolOutType">
+		<xsd:annotation>
+			<xsd:documentation>ConsultarCatalogoRolOutType</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="CatalogoRol"
+				type="tns:CatalogoRol" />
+			<xsd:element maxOccurs="1" minOccurs="1" name="EstatusComun"
+				type="tnsec:EstatusComun" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="ConsultarCatalogoPagoInType">
+		<xsd:annotation>
+			<xsd:documentation>ConsultarCatalogoPagoInType</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="IdRol">
+				<xsd:annotation>
+					<xsd:documentation>ID_ROL</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:minLength value="5" />
+						<xsd:maxLength value="50" />
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ConsultarCatalogoPagoOutType">
+		<xsd:annotation>
+			<xsd:documentation>ConsultarCatalogoPagoOutType</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="CatalogoPago"
+				type="tns:CatalogoPago" />
+			<xsd:element maxOccurs="1" minOccurs="1" name="EstatusComun"
+				type="tnsec:EstatusComun" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="ConsultarCatalogoDesarrolloInType">
+		<xsd:annotation>
+			<xsd:documentation>ConsultarCatalogoDesarrolloInType
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="IdRol">
+				<xsd:annotation>
+					<xsd:documentation>ID_ROL</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:minLength value="5" />
+						<xsd:maxLength value="50" />
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ConsultarCatalogoDesarrolloOutType">
+		<xsd:annotation>
+			<xsd:documentation>ConsultarCatalogoDesarrolloOutType
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="CatalogoDesarrollo"
+				type="tns:CatalogoDesarrollo" />
+			<xsd:element maxOccurs="1" minOccurs="1" name="EstatusComun"
+				type="tnsec:EstatusComun" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="ConsultarCatalogoLenguajeInType">
+		<xsd:annotation>
+			<xsd:documentation>ConsultarCatalogoLenguajeInType
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="IdRol">
+				<xsd:annotation>
+					<xsd:documentation>ID_ROL</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:minLength value="5" />
+						<xsd:maxLength value="50" />
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ConsultarCatalogoLenguajeOutType">
+		<xsd:annotation>
+			<xsd:documentation>ConsultarCatalogoLenguajeOutType
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="CatalogoLenguaje"
+				type="tns:CatalogoLenguaje" />
+			<xsd:element maxOccurs="1" minOccurs="1" name="EstatusComun"
+				type="tnsec:EstatusComun" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="ConsultarCatalogoMonedaInType">
+		<xsd:annotation>
+			<xsd:documentation>ConsultarCatalogoMonedaInType</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="IdRol">
+				<xsd:annotation>
+					<xsd:documentation>ID_ROL</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:minLength value="5" />
+						<xsd:maxLength value="50" />
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ConsultarCatalogoMonedaOutType">
+		<xsd:annotation>
+			<xsd:documentation>ConsultarCatalogoMonedaOutType</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="CatalogoMoneda"
+				type="tns:CatalogoMoneda" />
+			<xsd:element maxOccurs="1" minOccurs="1" name="EstatusComun"
+				type="tnsec:EstatusComun" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="ConsultarCatalogoCategoriaInType">
+		<xsd:annotation>
+			<xsd:documentation>ConsultarCatalogoCategoriaInType
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="IdRol">
+				<xsd:annotation>
+					<xsd:documentation>ID_ROL</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:minLength value="5" />
+						<xsd:maxLength value="50" />
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ConsultarCatalogoCategoriaOutType">
+		<xsd:annotation>
+			<xsd:documentation>ConsultarCatalogoCategoriaOutType
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="CatalogoCategoria"
+				type="tns:CatalogoCategoria" />
+			<xsd:element maxOccurs="1" minOccurs="1" name="EstatusComun"
+				type="tnsec:EstatusComun" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="ConsultarCatalogoCalificacionInType">
+		<xsd:annotation>
+			<xsd:documentation>ConsultarCatalogoCalificacionInType
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="IdRol">
+				<xsd:annotation>
+					<xsd:documentation>ID_ROL</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:minLength value="5" />
+						<xsd:maxLength value="50" />
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ConsultarCatalogoCalificacionOutType">
+		<xsd:annotation>
+			<xsd:documentation>ConsultarCatalogoCalificacionOutType
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1"
+				name="CatalogoCalificacion" type="tns:CatalogoCalificacion" />
+			<xsd:element maxOccurs="1" minOccurs="1" name="EstatusComun"
+				type="tnsec:EstatusComun" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="ConsultarCatalogoCuentaInType">
+		<xsd:annotation>
+			<xsd:documentation>ConsultarCatalogoCuentaInType</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="IdRol">
+				<xsd:annotation>
+					<xsd:documentation>ID_ROL</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:minLength value="5" />
+						<xsd:maxLength value="50" />
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ConsultarCatalogoCuentaOutType">
+		<xsd:annotation>
+			<xsd:documentation>ConsultarCatalogoCuentaOutType</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="CatalogoCuenta"
+				type="tns:CatalogoCuenta" />
+			<xsd:element maxOccurs="1" minOccurs="1" name="EstatusComun"
+				type="tnsec:EstatusComun" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:element name="ConsultarCatalogoRolIn" type="tns:ConsultarCatalogoRolInType" />
+	<xsd:element name="ConsultarCatalogoRolOut" type="tns:ConsultarCatalogoRolOutType" />
+	<xsd:element name="ConsultarCatalogoPagoIn" type="tns:ConsultarCatalogoPagoInType" />
+	<xsd:element name="ConsultarCatalogoPagoOut" type="tns:ConsultarCatalogoPagoOutType" />
+	<xsd:element name="ConsultarCatalogoDesarrolloIn" type="tns:ConsultarCatalogoDesarrolloInType" />
+	<xsd:element name="ConsultarCatalogoDesarrolloOut" type="tns:ConsultarCatalogoDesarrolloOutType" />
+	<xsd:element name="ConsultarCatalogoLenguajeIn" type="tns:ConsultarCatalogoLenguajeInType" />
+	<xsd:element name="ConsultarCatalogoLenguajeOut" type="tns:ConsultarCatalogoLenguajeOutType" />
+	<xsd:element name="ConsultarCatalogoMonedaIn" type="tns:ConsultarCatalogoMonedaInType" />
+	<xsd:element name="ConsultarCatalogoMonedaOut" type="tns:ConsultarCatalogoMonedaOutType" />
+	<xsd:element name="ConsultarCatalogoCategoriaIn" type="tns:ConsultarCatalogoCategoriaInType" />
+	<xsd:element name="ConsultarCatalogoCategoriaOut" type="tns:ConsultarCatalogoCategoriaOutType" />
+	<xsd:element name="ConsultarCatalogoCalificacionIn" type="tns:ConsultarCatalogoCalificacionInType" />
+	<xsd:element name="ConsultarCatalogoCalificacionOut"
+		type="tns:ConsultarCatalogoCalificacionOutType" />
+	<xsd:element name="ConsultarCatalogoCuentaIn" type="tns:ConsultarCatalogoCuentaInType" />
+	<xsd:element name="ConsultarCatalogoCuentaOut" type="tns:ConsultarCatalogoCuentaOutType" />
+
+	<xsd:complexType name="ModificarCatalogoRolInType">
+		<xsd:annotation>
+			<xsd:documentation>ModificarCatalogoRolInType</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="CatalogoRol"
+				type="tns:CatalogoRol" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ModificarCatalogoRolOutType">
+		<xsd:annotation>
+			<xsd:documentation>ModificarCatalogoRolOutType</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="EstatusComun"
+				type="tnsec:EstatusComun" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="ModificarCatalogoPagoInType">
+		<xsd:annotation>
+			<xsd:documentation>ModificarCatalogoPagoInType</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="CatalogoPago"
+				type="tns:CatalogoPago" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ModificarCatalogoPagoOutType">
+		<xsd:annotation>
+			<xsd:documentation>ModificarCatalogoPagoOutType</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="EstatusComun"
+				type="tnsec:EstatusComun" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="ModificarCatalogoDesarrolloInType">
+		<xsd:annotation>
+			<xsd:documentation>ModificarCatalogoDesarrolloInType
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="CatalogoDesarrollo"
+				type="tns:CatalogoDesarrollo" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ModificarCatalogoDesarrolloOutType">
+		<xsd:annotation>
+			<xsd:documentation>ModificarCatalogoDesarrolloOutType
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="EstatusComun"
+				type="tnsec:EstatusComun" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="ModificarCatalogoLenguajeInType">
+		<xsd:annotation>
+			<xsd:documentation>ModificarCatalogoLenguajeInType
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="CatalogoLenguaje"
+				type="tns:CatalogoLenguaje" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ModificarCatalogoLenguajeOutType">
+		<xsd:annotation>
+			<xsd:documentation>ModificarCatalogoLenguajeOutType
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="EstatusComun"
+				type="tnsec:EstatusComun" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="ModificarCatalogoMonedaInType">
+		<xsd:annotation>
+			<xsd:documentation>ModificarCatalogoMonedaInType</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="CatalogoMoneda"
+				type="tns:CatalogoMoneda" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ModificarCatalogoMonedaOutType">
+		<xsd:annotation>
+			<xsd:documentation>ModificarCatalogoMonedaOutType</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="EstatusComun"
+				type="tnsec:EstatusComun" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="ModificarCatalogoCategoriaInType">
+		<xsd:annotation>
+			<xsd:documentation>ModificarCatalogoCategoriaInType
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="CatalogoCategoria"
+				type="tns:CatalogoCategoria" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ModificarCatalogoCategoriaOutType">
+		<xsd:annotation>
+			<xsd:documentation>ModificarCatalogoCategoriaOutType
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="EstatusComun"
+				type="tnsec:EstatusComun" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="ModificarCatalogoCalificacionInType">
+		<xsd:annotation>
+			<xsd:documentation>ModificarCatalogoCalificacionInType
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1"
+				name="CatalogoCalificacion" type="tns:CatalogoCalificacion" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ModificarCatalogoCalificacionOutType">
+		<xsd:annotation>
+			<xsd:documentation>ModificarCatalogoCalificacionOutType
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="EstatusComun"
+				type="tnsec:EstatusComun" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="ModificarCatalogoCuentaInType">
+		<xsd:annotation>
+			<xsd:documentation>ModificarCatalogoCuentaInType</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="CatalogoCuenta"
+				type="tns:CatalogoCuenta" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ModificarCatalogoCuentaOutType">
+		<xsd:annotation>
+			<xsd:documentation>ModificarCatalogoCuentaOutType</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="EstatusComun"
+				type="tnsec:EstatusComun" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:element name="ModificarCatalogoRolIn" type="tns:ModificarCatalogoRolInType" />
+	<xsd:element name="ModificarCatalogoRolOut" type="tns:ModificarCatalogoRolOutType" />
+	<xsd:element name="ModificarCatalogoPagoIn" type="tns:ModificarCatalogoPagoInType" />
+	<xsd:element name="ModificarCatalogoPagoOut" type="tns:ModificarCatalogoPagoOutType" />
+	<xsd:element name="ModificarCatalogoDesarrolloIn" type="tns:ModificarCatalogoDesarrolloInType" />
+	<xsd:element name="ModificarCatalogoDesarrolloOut" type="tns:ModificarCatalogoDesarrolloOutType" />
+	<xsd:element name="ModificarCatalogoLenguajeIn" type="tns:ModificarCatalogoLenguajeInType" />
+	<xsd:element name="ModificarCatalogoLenguajeOut" type="tns:ModificarCatalogoLenguajeOutType" />
+	<xsd:element name="ModificarCatalogoMonedaIn" type="tns:ModificarCatalogoMonedaInType" />
+	<xsd:element name="ModificarCatalogoMonedaOut" type="tns:ModificarCatalogoMonedaOutType" />
+	<xsd:element name="ModificarCatalogoCategoriaIn" type="tns:ModificarCatalogoCategoriaInType" />
+	<xsd:element name="ModificarCatalogoCategoriaOut" type="tns:ModificarCatalogoCategoriaOutType" />
+	<xsd:element name="ModificarCatalogoCalificacionIn" type="tns:ModificarCatalogoCalificacionInType" />
+	<xsd:element name="ModificarCatalogoCalificacionOut"
+		type="tns:ModificarCatalogoCalificacionOutType" />
+	<xsd:element name="ModificarCatalogoCuentaIn" type="tns:ModificarCatalogoCuentaInType" />
+	<xsd:element name="ModificarCatalogoCuentaOut" type="tns:ModificarCatalogoCuentaOutType" />
+
+</xsd:schema>
