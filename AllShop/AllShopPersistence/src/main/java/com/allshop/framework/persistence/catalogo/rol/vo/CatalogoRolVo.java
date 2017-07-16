@@ -3,24 +3,24 @@ package com.allshop.framework.persistence.catalogo.rol.vo;
 import com.allshop.framework.persistence.common.ElementosComunesVo;
 
 public class CatalogoRolVo {
-	protected String langTpCd;
-	protected String idRol;
+	protected long langTpCd;
+	protected long idRol;
 	protected String descRol;
 	protected ElementosComunesVo elementosComunesVo;
 
-	public String getLangTpCd() {
+	public long getLangTpCd() {
 		return langTpCd;
 	}
 
-	public void setLangTpCd(String langTpCd) {
+	public void setLangTpCd(long langTpCd) {
 		this.langTpCd = langTpCd;
 	}
 
-	public String getIdRol() {
+	public long getIdRol() {
 		return idRol;
 	}
 
-	public void setIdRol(String idRol) {
+	public void setIdRol(long idRol) {
 		this.idRol = idRol;
 	}
 

@@ -1,29 +1,29 @@
 package com.allshop.framework.core.service.catalogo.desarrollo;
 
-import com.allshop.framework.core.ws.catalogoscorporativos.ConsultarCatalogoDesarrolloOutType;
-import com.allshop.framework.core.ws.catalogoscorporativos.CrearCatalogoDesarrolloInType;
-import com.allshop.framework.core.ws.catalogoscorporativos.CrearCatalogoDesarrolloOutType;
-import com.allshop.framework.core.ws.catalogoscorporativos.ModificarCatalogoDesarrolloInType;
-import com.allshop.framework.core.ws.catalogoscorporativos.ModificarCatalogoDesarrolloOutType;
+import com.allshop.framework.core.ws.catalogoscorporativos.ConsultarCatalogoDesarrolloOut;
+import com.allshop.framework.core.ws.catalogoscorporativos.CrearCatalogoDesarrolloIn;
+import com.allshop.framework.core.ws.catalogoscorporativos.CrearCatalogoDesarrolloOut;
+import com.allshop.framework.core.ws.catalogoscorporativos.ModificarCatalogoDesarrolloIn;
+import com.allshop.framework.core.ws.catalogoscorporativos.ModificarCatalogoDesarrolloOut;
 
 public class CatalogoDesarrolloServiceImpl implements CatalogoDesarrolloService{
 
 	@Override
-	public CrearCatalogoDesarrolloOutType crearCatalogoDesarrollo(
-			CrearCatalogoDesarrolloInType crearCatalogoDesarrolloInType) {
+	public CrearCatalogoDesarrolloOut crearCatalogoDesarrollo(
+			CrearCatalogoDesarrolloIn crearCatalogoDesarrolloIn) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public ModificarCatalogoDesarrolloOutType modificarCatalogoDesarrollo(
-			ModificarCatalogoDesarrolloInType modificarCatalogoDesarrolloInType) {
+	public ModificarCatalogoDesarrolloOut modificarCatalogoDesarrollo(
+			ModificarCatalogoDesarrolloIn modificarCatalogoDesarrolloIn) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public ConsultarCatalogoDesarrolloOutType consultarCatalogoDesarrollo(String idDesarrollo) {
+	public ConsultarCatalogoDesarrolloOut consultarCatalogoDesarrollo(String idDesarrollo) {
 		// TODO Auto-generated method stub
 		return null;
 	}

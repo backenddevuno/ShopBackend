@@ -52,28 +52,6 @@ targetNamespace="http://www.allshop.com/framework/core/ws/general/Headers" versi
           </xsd:restriction>
         </xsd:simpleType>
       </xsd:element>
-      <xsd:element name="CodEmpresa" minOccurs="0" maxOccurs="1">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="es">Entidad a la que pertenece la terminal conectada</xsd:documentation>
-        </xsd:annotation>
-        <xsd:simpleType>
-          <xsd:restriction base="xsd:string">
-            <xsd:minLength value="1"/>
-            <xsd:maxLength value="10"/>
-          </xsd:restriction>
-        </xsd:simpleType>
-      </xsd:element>
-      <xsd:element name="CodCR" minOccurs="0" maxOccurs="1">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="es">Oficina a la que pertenece la terminal conectada</xsd:documentation>
-        </xsd:annotation>
-        <xsd:simpleType>
-          <xsd:restriction base="xsd:integer">
-            <xsd:minExclusive value="0"/>
-            <xsd:maxExclusive value="99999"/>
-          </xsd:restriction>
-        </xsd:simpleType>
-      </xsd:element>
     </xsd:sequence>
   </xsd:complexType>
   <xsd:complexType name="HeaderRequestType">
@@ -230,31 +208,6 @@ para hacer la relacion del mensaje de entrada con el de salida</xsd:documentatio
           <xsd:restriction base="xsd:string">
             <xsd:minLength value="1"/>
             <xsd:maxLength value="256"/>
-          </xsd:restriction>
-        </xsd:simpleType>
-      </xsd:element>
-      <xsd:element name="Sic" minOccurs="0" maxOccurs="1">
-        <xsd:annotation>
-          <xsd:documentation>Sic utilizado por interfaz Valida Transaccion.</xsd:documentation>
-        </xsd:annotation>
-        <xsd:simpleType>
-          <xsd:restriction base="xsd:string">
-            <xsd:minLength value="1"/>
-            <xsd:maxLength value="25"/>
-          </xsd:restriction>
-        </xsd:simpleType>
-      </xsd:element>
-      <xsd:element name="CustomSeg" minOccurs="0" maxOccurs="1">
-        <xsd:annotation>
-          <xsd:documentation>Campo de seguridad para validar en la tabla de
-						operaciones, informacion adicional requerida por
-						el motor de reglas para validar la transaccion
-						es abierto y valida entre servicios.</xsd:documentation>
-        </xsd:annotation>
-        <xsd:simpleType>
-          <xsd:restriction base="xsd:string">
-            <xsd:minLength value="1"/>
-            <xsd:maxLength value="20"/>
           </xsd:restriction>
         </xsd:simpleType>
       </xsd:element>

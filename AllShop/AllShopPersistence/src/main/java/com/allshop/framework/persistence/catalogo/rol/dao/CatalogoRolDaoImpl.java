@@ -1,6 +1,7 @@
 package com.allshop.framework.persistence.catalogo.rol.dao;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -10,7 +11,6 @@ import java.util.List;
 import org.apache.log4j.Logger;
 import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.core.simple.ParameterizedRowMapper;
-import org.springframework.stereotype.Repository;
 
 import com.allshop.framework.persistence.catalogo.rol.vo.CatalogoRolVo;
 import com.allshop.framework.persistence.common.ElementosComunesVo;
@@ -29,7 +29,7 @@ public class CatalogoRolDaoImpl extends JdbcDao implements CatalogoRolDao {
 	private EstatusComunVo estatusComunVo = null;  
 	
 	@Override
-	public EstatusComunVo crearCatalogoRolDao(final CatalogoRolVo catalogoRolVo) {
+	public CatalogoRolVo crearCatalogoRolDao(final CatalogoRolVo catalogoRolVo) {
 
 		if (log.isDebugEnabled()) {
 			log.debug("crearCatalogoRol...");
@@ -42,11 +42,11 @@ public class CatalogoRolDaoImpl extends JdbcDao implements CatalogoRolDao {
 				public PreparedStatement createPreparedStatement(Connection con) throws SQLException {
 					PreparedStatement ps = con.prepareStatement(qryCrearRol);
 					ps.setInt(1, idRol);
-					ps.setString(2, catalogoRolVo.getIdRol());
+					ps.setLong(2, catalogoRolVo.getIdRol());
 					ps.setString(3, catalogoRolVo.getDescRol());
-					ps.setString(4, catalogoRolVo.getElementosComunesVo().getStatusFlag());
-					ps.setString(5, catalogoRolVo.getElementosComunesVo().getExpiryDt());
-					ps.setString(6, catalogoRolVo.getElementosComunesVo().getLastUpdateDt());
+					ps.setInt(4, catalogoRolVo.getElementosComunesVo().getStatusFlag());
+					ps.setDate(5, (Date) catalogoRolVo.getElementosComunesVo().getExpiryDt());
+					ps.setDate(6, (Date) catalogoRolVo.getElementosComunesVo().getLastUpdateDt());
 					ps.setInt(7, idRol);
 					ps.setString(8, catalogoRolVo.getElementosComunesVo().getLastUpdateUser());
 	
@@ -61,11 +61,11 @@ public class CatalogoRolDaoImpl extends JdbcDao implements CatalogoRolDao {
 		}
 		// Importante verificar que afectamos exactamente un registro.
 //		this.checkAffected(affected);
-		return estatusComunVo;
+		return new CatalogoRolVo();
 	}
 
 	@Override
-	public EstatusComunVo modificarCatalogoRolDao(final CatalogoRolVo catalogoRolVo) {
+	public CatalogoRolVo modificarCatalogoRolDao(final CatalogoRolVo catalogoRolVo) {
 	       if (log.isDebugEnabled()) {
 	            log.debug("modificarCatalogoRol...");
 	        }
@@ -75,14 +75,14 @@ public class CatalogoRolDaoImpl extends JdbcDao implements CatalogoRolDao {
 		                    throws SQLException {
 		                PreparedStatement ps = con.prepareStatement(qryModificarRol);
 						
-		                ps.setString(1, catalogoRolVo.getLangTpCd());
+		                ps.setLong(1, catalogoRolVo.getLangTpCd());
 						ps.setString(2, catalogoRolVo.getDescRol());
-						ps.setString(3, catalogoRolVo.getElementosComunesVo().getStatusFlag());
-						ps.setString(4, catalogoRolVo.getElementosComunesVo().getExpiryDt());
-						ps.setString(5, catalogoRolVo.getElementosComunesVo().getLastUpdateDt());
-						ps.setString(6, catalogoRolVo.getIdRol());
+						ps.setInt(3, catalogoRolVo.getElementosComunesVo().getStatusFlag());
+						ps.setDate(4, (Date) catalogoRolVo.getElementosComunesVo().getExpiryDt());
+						ps.setDate(5, (Date) catalogoRolVo.getElementosComunesVo().getLastUpdateDt());
+						ps.setLong(6, catalogoRolVo.getIdRol());
 						ps.setString(7, catalogoRolVo.getElementosComunesVo().getLastUpdateUser());
-						ps.setString(8, catalogoRolVo.getIdRol());
+						ps.setLong(8, catalogoRolVo.getIdRol());
 		                return ps;
 		            }
 		        });
@@ -94,7 +94,7 @@ public class CatalogoRolDaoImpl extends JdbcDao implements CatalogoRolDao {
 			}
 	        // Importante verificar que afectamos exactamente un registro.
 //	        this.checkAffected(affected);
-		return estatusComunVo;
+		return new CatalogoRolVo();
 	}
 
     private static ParameterizedRowMapper<CatalogoRolVo> MAPPER = new ParameterizedRowMapper<CatalogoRolVo>() {
@@ -102,13 +102,13 @@ public class CatalogoRolDaoImpl extends JdbcDao implements CatalogoRolDao {
         	CatalogoRolVo obj = new CatalogoRolVo();
         	ElementosComunesVo elementosComunesVo = new ElementosComunesVo();
 
-        	obj.setLangTpCd(rs.getString("LANG_TP_CD"));
-            obj.setIdRol(rs.getString("ID_ROL"));
+        	obj.setLangTpCd(Long.parseLong(rs.getString("LANG_TP_CD")));
+            obj.setIdRol(Long.parseLong(rs.getString("ID_ROL")));
             obj.setDescRol(rs.getString("DESC_ROL"));
-            elementosComunesVo.setStatusFlag(rs.getString("STATUS_FLAG"));
-            elementosComunesVo.setExpiryDt(rs.getString("EXPIRY_DT"));
-            elementosComunesVo.setLastUpdateDt(rs.getString("LAST_UPDATE_DT"));
-            elementosComunesVo.setLastUpdateTxId(rs.getString("LAST_UPDATE_TX_ID"));
+            elementosComunesVo.setStatusFlag(Integer.parseInt(rs.getString("STATUS_FLAG")));
+            elementosComunesVo.setExpiryDt(Date.valueOf(rs.getString("EXPIRY_DT")));
+            elementosComunesVo.setLastUpdateDt(Date.valueOf(rs.getString("LAST_UPDATE_DT")));
+            elementosComunesVo.setLastUpdateTxId(Long.parseLong(rs.getString("LAST_UPDATE_TX_ID")));
             elementosComunesVo.setLastUpdateUser(rs.getString("LAST_UPDATE_USER"));
             obj.setElementosComunesVo(elementosComunesVo);
             

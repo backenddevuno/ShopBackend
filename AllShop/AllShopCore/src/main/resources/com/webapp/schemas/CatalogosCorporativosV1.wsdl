@@ -18,8 +18,6 @@ targetNamespace="http://www.allshop.com/framework/core/ws/CatalogosCorporativos"
       <xsd:import schemaLocation="HeaderRequest.xsd" namespace="http://www.allshop.com/framework/core/ws/general/Headers"/>
       <xsd:import schemaLocation="HeaderResponse.xsd" namespace="http://www.allshop.com/framework/core/ws/general/Headers"/>
       <xsd:import schemaLocation="ExcepcionGenerica.xsd" namespace="http://www.allshop.com/framework/core/ws/common/ExcepcionGeneral"/>
-	  <xsd:import schemaLocation="EstatusComun.xsd" namespace="http://www.allshop.com/framework/core/ws/common/EstatusComunes"/>
-	  <xsd:import schemaLocation="ElementosComunes.xsd" namespace="http://www.allshop.com/framework/core/ws/common/ElementosComunes"/>
     </xsd:schema>
   </wsdl:types>
 
@@ -830,7 +828,7 @@ targetNamespace="http://www.allshop.com/framework/core/ws/CatalogosCorporativos"
   
   <wsdl:service name="CatalogosCorporativos">
     <wsdl:port name="CatalogosCorporativosHttpPort" binding="tns:CatalogosCorporativosSOAP">
-      <soap11:address location="http://localhost:8087/AllShopWeb/ws/CatalogosCorporativosService.wsdl"/>
+      <soap11:address location="http://localhost:8080/AllShopWeb/ws/CatalogosCorporativosService.wsdl"/>
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

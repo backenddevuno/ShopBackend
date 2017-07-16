@@ -19,10 +19,10 @@ elementFormDefault="qualified" version="1.0">
                <xsd:documentation>LANG_TP_CD</xsd:documentation>
             </xsd:annotation>
             <xsd:simpleType>
-               <xsd:restriction base="xsd:string">
-                  <xsd:minLength value="5" />
-                  <xsd:maxLength value="50" />
-               </xsd:restriction>
+          <xsd:restriction base="xsd:integer">
+            <xsd:minInclusive value="1"/>
+            <xsd:maxInclusive value="9999999999"/>
+          </xsd:restriction>
             </xsd:simpleType>
          </xsd:element>
          <xsd:element maxOccurs="1" minOccurs="1" name="IdRol">
@@ -30,10 +30,10 @@ elementFormDefault="qualified" version="1.0">
                <xsd:documentation>ID_ROL</xsd:documentation>
             </xsd:annotation>
             <xsd:simpleType>
-               <xsd:restriction base="xsd:string">
-                  <xsd:minLength value="5" />
-                  <xsd:maxLength value="50" />
-               </xsd:restriction>
+          <xsd:restriction base="xsd:integer">
+            <xsd:minInclusive value="1"/>
+            <xsd:maxInclusive value="9999999999"/>
+          </xsd:restriction>
             </xsd:simpleType>
          </xsd:element>
          <xsd:element maxOccurs="1" minOccurs="1" name="DescRol">
@@ -43,7 +43,7 @@ elementFormDefault="qualified" version="1.0">
             <xsd:simpleType>
                <xsd:restriction base="xsd:string">
                   <xsd:minLength value="5" />
-                  <xsd:maxLength value="50" />
+                  <xsd:maxLength value="255" />
                </xsd:restriction>
             </xsd:simpleType>
          </xsd:element>
@@ -57,10 +57,10 @@ elementFormDefault="qualified" version="1.0">
                <xsd:documentation>LANG_TP_CD</xsd:documentation>
             </xsd:annotation>
             <xsd:simpleType>
-               <xsd:restriction base="xsd:string">
-                  <xsd:minLength value="1" />
-                  <xsd:maxLength value="10" />
-               </xsd:restriction>
+          <xsd:restriction base="xsd:integer">
+            <xsd:minInclusive value="1"/>
+            <xsd:maxInclusive value="9999999999"/>
+          </xsd:restriction>
             </xsd:simpleType>
          </xsd:element>
          <xsd:element maxOccurs="1" minOccurs="1" name="IdPago">
@@ -68,10 +68,10 @@ elementFormDefault="qualified" version="1.0">
                <xsd:documentation>ID_PAGO</xsd:documentation>
             </xsd:annotation>
             <xsd:simpleType>
-               <xsd:restriction base="xsd:string">
-                  <xsd:minLength value="5" />
-                  <xsd:maxLength value="50" />
-               </xsd:restriction>
+          <xsd:restriction base="xsd:integer">
+            <xsd:minInclusive value="1"/>
+            <xsd:maxInclusive value="9999999999"/>
+          </xsd:restriction>
             </xsd:simpleType>
          </xsd:element>
          <xsd:element maxOccurs="1" minOccurs="1" name="CodPago">
@@ -80,8 +80,8 @@ elementFormDefault="qualified" version="1.0">
             </xsd:annotation>
             <xsd:simpleType>
                <xsd:restriction base="xsd:string">
-                  <xsd:minLength value="5" />
-                  <xsd:maxLength value="50" />
+                  <xsd:minLength value="1" />
+                  <xsd:maxLength value="5" />
                </xsd:restriction>
             </xsd:simpleType>
          </xsd:element>
@@ -92,7 +92,7 @@ elementFormDefault="qualified" version="1.0">
             <xsd:simpleType>
                <xsd:restriction base="xsd:string">
                   <xsd:minLength value="5" />
-                  <xsd:maxLength value="50" />
+                  <xsd:maxLength value="255" />
                </xsd:restriction>
             </xsd:simpleType>
          </xsd:element>
@@ -106,10 +106,10 @@ elementFormDefault="qualified" version="1.0">
                <xsd:documentation>LANG_TP_CD</xsd:documentation>
             </xsd:annotation>
             <xsd:simpleType>
-               <xsd:restriction base="xsd:string">
-                  <xsd:minLength value="5" />
-                  <xsd:maxLength value="50" />
-               </xsd:restriction>
+          <xsd:restriction base="xsd:integer">
+            <xsd:minInclusive value="1"/>
+            <xsd:maxInclusive value="9999999999"/>
+          </xsd:restriction>
             </xsd:simpleType>
          </xsd:element>
          <xsd:element maxOccurs="1" minOccurs="1" name="IdDesarrollo">
@@ -117,10 +117,10 @@ elementFormDefault="qualified" version="1.0">
                <xsd:documentation>ID_DESARROLLO</xsd:documentation>
             </xsd:annotation>
             <xsd:simpleType>
-               <xsd:restriction base="xsd:string">
-                  <xsd:minLength value="5" />
-                  <xsd:maxLength value="50" />
-               </xsd:restriction>
+          <xsd:restriction base="xsd:integer">
+            <xsd:minInclusive value="1"/>
+            <xsd:maxInclusive value="9999999999"/>
+          </xsd:restriction>
             </xsd:simpleType>
          </xsd:element>
          <xsd:element maxOccurs="1" minOccurs="1" name="CodDesarrollo">
@@ -129,8 +129,8 @@ elementFormDefault="qualified" version="1.0">
             </xsd:annotation>
             <xsd:simpleType>
                <xsd:restriction base="xsd:string">
-                  <xsd:minLength value="5" />
-                  <xsd:maxLength value="50" />
+                  <xsd:minLength value="1" />
+                  <xsd:maxLength value="10" />
                </xsd:restriction>
             </xsd:simpleType>
          </xsd:element>
@@ -141,7 +141,7 @@ elementFormDefault="qualified" version="1.0">
             <xsd:simpleType>
                <xsd:restriction base="xsd:string">
                   <xsd:minLength value="5" />
-                  <xsd:maxLength value="50" />
+                  <xsd:maxLength value="255" />
                </xsd:restriction>
             </xsd:simpleType>
          </xsd:element>
@@ -155,10 +155,10 @@ elementFormDefault="qualified" version="1.0">
                <xsd:documentation>LANG_TP_CD</xsd:documentation>
             </xsd:annotation>
             <xsd:simpleType>
-               <xsd:restriction base="xsd:string">
-                  <xsd:minLength value="5" />
-                  <xsd:maxLength value="50" />
-               </xsd:restriction>
+          <xsd:restriction base="xsd:integer">
+            <xsd:minInclusive value="1"/>
+            <xsd:maxInclusive value="9999999999"/>
+          </xsd:restriction>
             </xsd:simpleType>
          </xsd:element>
          <xsd:element maxOccurs="1" minOccurs="1" name="IdLenguaje">
@@ -166,10 +166,10 @@ elementFormDefault="qualified" version="1.0">
                <xsd:documentation>ID_LENGUAJE</xsd:documentation>
             </xsd:annotation>
             <xsd:simpleType>
-               <xsd:restriction base="xsd:string">
-                  <xsd:minLength value="5" />
-                  <xsd:maxLength value="50" />
-               </xsd:restriction>
+          <xsd:restriction base="xsd:integer">
+            <xsd:minInclusive value="1"/>
+            <xsd:maxInclusive value="9999999999"/>
+          </xsd:restriction>
             </xsd:simpleType>
          </xsd:element>
          <xsd:element maxOccurs="1" minOccurs="1" name="DescLenguaje">
@@ -179,7 +179,7 @@ elementFormDefault="qualified" version="1.0">
             <xsd:simpleType>
                <xsd:restriction base="xsd:string">
                   <xsd:minLength value="5" />
-                  <xsd:maxLength value="50" />
+                  <xsd:maxLength value="255" />
                </xsd:restriction>
             </xsd:simpleType>
          </xsd:element>
@@ -193,10 +193,10 @@ elementFormDefault="qualified" version="1.0">
                <xsd:documentation>LANG_TP_CD</xsd:documentation>
             </xsd:annotation>
             <xsd:simpleType>
-               <xsd:restriction base="xsd:string">
-                  <xsd:minLength value="5" />
-                  <xsd:maxLength value="50" />
-               </xsd:restriction>
+          <xsd:restriction base="xsd:integer">
+            <xsd:minInclusive value="1"/>
+            <xsd:maxInclusive value="9999999999"/>
+          </xsd:restriction>
             </xsd:simpleType>
          </xsd:element>
          <xsd:element maxOccurs="1" minOccurs="1" name="IdMoneda">
@@ -204,10 +204,10 @@ elementFormDefault="qualified" version="1.0">
                <xsd:documentation>ID_MONEDA</xsd:documentation>
             </xsd:annotation>
             <xsd:simpleType>
-               <xsd:restriction base="xsd:string">
-                  <xsd:minLength value="5" />
-                  <xsd:maxLength value="50" />
-               </xsd:restriction>
+          <xsd:restriction base="xsd:integer">
+            <xsd:minInclusive value="1"/>
+            <xsd:maxInclusive value="9999999999"/>
+          </xsd:restriction>
             </xsd:simpleType>
          </xsd:element>
          <xsd:element maxOccurs="1" minOccurs="1" name="CodMoneda">
@@ -216,8 +216,8 @@ elementFormDefault="qualified" version="1.0">
             </xsd:annotation>
             <xsd:simpleType>
                <xsd:restriction base="xsd:string">
-                  <xsd:minLength value="5" />
-                  <xsd:maxLength value="50" />
+                  <xsd:minLength value="1" />
+                  <xsd:maxLength value="5" />
                </xsd:restriction>
             </xsd:simpleType>
          </xsd:element>
@@ -228,7 +228,7 @@ elementFormDefault="qualified" version="1.0">
             <xsd:simpleType>
                <xsd:restriction base="xsd:string">
                   <xsd:minLength value="5" />
-                  <xsd:maxLength value="50" />
+                  <xsd:maxLength value="255" />
                </xsd:restriction>
             </xsd:simpleType>
          </xsd:element>
@@ -242,10 +242,10 @@ elementFormDefault="qualified" version="1.0">
                <xsd:documentation>LANG_TP_CD</xsd:documentation>
             </xsd:annotation>
             <xsd:simpleType>
-               <xsd:restriction base="xsd:string">
-                  <xsd:minLength value="5" />
-                  <xsd:maxLength value="50" />
-               </xsd:restriction>
+          <xsd:restriction base="xsd:integer">
+            <xsd:minInclusive value="1"/>
+            <xsd:maxInclusive value="9999999999"/>
+          </xsd:restriction>
             </xsd:simpleType>
          </xsd:element>
          <xsd:element maxOccurs="1" minOccurs="1" name="IdCategoria">
@@ -253,10 +253,10 @@ elementFormDefault="qualified" version="1.0">
                <xsd:documentation>ID_CATEGORIA</xsd:documentation>
             </xsd:annotation>
             <xsd:simpleType>
-               <xsd:restriction base="xsd:string">
-                  <xsd:minLength value="5" />
-                  <xsd:maxLength value="50" />
-               </xsd:restriction>
+          <xsd:restriction base="xsd:integer">
+            <xsd:minInclusive value="1"/>
+            <xsd:maxInclusive value="9999999999"/>
+          </xsd:restriction>
             </xsd:simpleType>
          </xsd:element>
          <xsd:element maxOccurs="1" minOccurs="1" name="DescCategoria">
@@ -266,7 +266,7 @@ elementFormDefault="qualified" version="1.0">
             <xsd:simpleType>
                <xsd:restriction base="xsd:string">
                   <xsd:minLength value="5" />
-                  <xsd:maxLength value="50" />
+                  <xsd:maxLength value="255" />
                </xsd:restriction>
             </xsd:simpleType>
          </xsd:element>
@@ -280,10 +280,10 @@ elementFormDefault="qualified" version="1.0">
                <xsd:documentation>LANG_TP_CD</xsd:documentation>
             </xsd:annotation>
             <xsd:simpleType>
-               <xsd:restriction base="xsd:string">
-                  <xsd:minLength value="5" />
-                  <xsd:maxLength value="50" />
-               </xsd:restriction>
+          <xsd:restriction base="xsd:integer">
+            <xsd:minInclusive value="1"/>
+            <xsd:maxInclusive value="9999999999"/>
+          </xsd:restriction>
             </xsd:simpleType>
          </xsd:element>
          <xsd:element maxOccurs="1" minOccurs="1" name="IdCalificacion">
@@ -291,10 +291,10 @@ elementFormDefault="qualified" version="1.0">
                <xsd:documentation>ID_CALIFICACION</xsd:documentation>
             </xsd:annotation>
             <xsd:simpleType>
-               <xsd:restriction base="xsd:string">
-                  <xsd:minLength value="5" />
-                  <xsd:maxLength value="50" />
-               </xsd:restriction>
+          <xsd:restriction base="xsd:integer">
+            <xsd:minInclusive value="1"/>
+            <xsd:maxInclusive value="9999999999"/>
+          </xsd:restriction>
             </xsd:simpleType>
          </xsd:element>
          <xsd:element maxOccurs="1" minOccurs="1" name="DescCalificacion">
@@ -304,7 +304,7 @@ elementFormDefault="qualified" version="1.0">
             <xsd:simpleType>
                <xsd:restriction base="xsd:string">
                   <xsd:minLength value="5" />
-                  <xsd:maxLength value="50" />
+                  <xsd:maxLength value="255" />
                </xsd:restriction>
             </xsd:simpleType>
          </xsd:element>
@@ -318,10 +318,10 @@ elementFormDefault="qualified" version="1.0">
                <xsd:documentation>LANG_TP_CD</xsd:documentation>
             </xsd:annotation>
             <xsd:simpleType>
-               <xsd:restriction base="xsd:string">
-                  <xsd:minLength value="5" />
-                  <xsd:maxLength value="50" />
-               </xsd:restriction>
+          <xsd:restriction base="xsd:integer">
+            <xsd:minInclusive value="1"/>
+            <xsd:maxInclusive value="9999999999"/>
+          </xsd:restriction>
             </xsd:simpleType>
          </xsd:element>
          <xsd:element maxOccurs="1" minOccurs="1" name="IdCuenta">
@@ -329,10 +329,10 @@ elementFormDefault="qualified" version="1.0">
                <xsd:documentation>ID_CUENTA</xsd:documentation>
             </xsd:annotation>
             <xsd:simpleType>
-               <xsd:restriction base="xsd:string">
-                  <xsd:minLength value="5" />
-                  <xsd:maxLength value="50" />
-               </xsd:restriction>
+          <xsd:restriction base="xsd:integer">
+            <xsd:minInclusive value="1"/>
+            <xsd:maxInclusive value="9999999999"/>
+          </xsd:restriction>
             </xsd:simpleType>
          </xsd:element>
          <xsd:element maxOccurs="1" minOccurs="1" name="DescCuenta">
@@ -342,7 +342,7 @@ elementFormDefault="qualified" version="1.0">
             <xsd:simpleType>
                <xsd:restriction base="xsd:string">
                   <xsd:minLength value="5" />
-                  <xsd:maxLength value="50" />
+                  <xsd:maxLength value="255" />
                </xsd:restriction>
             </xsd:simpleType>
          </xsd:element>

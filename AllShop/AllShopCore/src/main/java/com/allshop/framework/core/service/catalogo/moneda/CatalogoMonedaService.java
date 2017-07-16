@@ -1,13 +1,13 @@
 package com.allshop.framework.core.service.catalogo.moneda;
 
-import com.allshop.framework.core.ws.catalogoscorporativos.ConsultarCatalogoMonedaOutType;
-import com.allshop.framework.core.ws.catalogoscorporativos.CrearCatalogoMonedaInType;
-import com.allshop.framework.core.ws.catalogoscorporativos.CrearCatalogoMonedaOutType;
-import com.allshop.framework.core.ws.catalogoscorporativos.ModificarCatalogoMonedaInType;
-import com.allshop.framework.core.ws.catalogoscorporativos.ModificarCatalogoMonedaOutType;
+import com.allshop.framework.core.ws.catalogoscorporativos.ConsultarCatalogoMonedaOut;
+import com.allshop.framework.core.ws.catalogoscorporativos.CrearCatalogoMonedaIn;
+import com.allshop.framework.core.ws.catalogoscorporativos.CrearCatalogoMonedaOut;
+import com.allshop.framework.core.ws.catalogoscorporativos.ModificarCatalogoMonedaIn;
+import com.allshop.framework.core.ws.catalogoscorporativos.ModificarCatalogoMonedaOut;
 
 public interface CatalogoMonedaService {
-	CrearCatalogoMonedaOutType crearCatalogoMoneda(CrearCatalogoMonedaInType crearCatalogoMonedaInType);
-	ModificarCatalogoMonedaOutType modificarCatalogoMoneda(ModificarCatalogoMonedaInType modificarCatalogoMonedaInType);
-	ConsultarCatalogoMonedaOutType consultarCatalogoMoneda(String idMoneda);
+	CrearCatalogoMonedaOut crearCatalogoMoneda(CrearCatalogoMonedaIn crearCatalogoMonedaIn);
+	ModificarCatalogoMonedaOut modificarCatalogoMoneda(ModificarCatalogoMonedaIn modificarCatalogoMonedaIn);
+	ConsultarCatalogoMonedaOut consultarCatalogoMoneda(String idMoneda);
 }

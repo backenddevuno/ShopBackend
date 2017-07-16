@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import com.allshop.framework.persistence.catalogo.rol.dao.CatalogoRolDao;
 import com.allshop.framework.persistence.catalogo.rol.vo.CatalogoRolVo;
-import com.allshop.framework.persistence.common.EstatusComunVo;
 
 @Service
 public class CatalogoRolBusinessImpl implements CatalogoRolBusiness{
@@ -16,12 +15,12 @@ public class CatalogoRolBusinessImpl implements CatalogoRolBusiness{
 	protected CatalogoRolDao catalogoRolDao;
 	
 	@Override
-	public EstatusComunVo crearCatalogoRolBusiness(CatalogoRolVo catalogoRolVo) {
+	public CatalogoRolVo crearCatalogoRolBusiness(CatalogoRolVo catalogoRolVo) {
 		return catalogoRolDao.crearCatalogoRolDao(catalogoRolVo);
 	}
 
 	@Override
-	public EstatusComunVo modificarCatalogoRolBusiness(CatalogoRolVo catalogoRolVo) {
+	public CatalogoRolVo modificarCatalogoRolBusiness(CatalogoRolVo catalogoRolVo) {
 		return catalogoRolDao.modificarCatalogoRolDao(catalogoRolVo);
 	}
 

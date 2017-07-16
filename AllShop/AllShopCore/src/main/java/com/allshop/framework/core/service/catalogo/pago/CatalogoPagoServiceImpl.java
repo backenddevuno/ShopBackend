@@ -1,27 +1,27 @@
 package com.allshop.framework.core.service.catalogo.pago;
 
-import com.allshop.framework.core.ws.catalogoscorporativos.ConsultarCatalogoPagoOutType;
-import com.allshop.framework.core.ws.catalogoscorporativos.CrearCatalogoPagoInType;
-import com.allshop.framework.core.ws.catalogoscorporativos.CrearCatalogoPagoOutType;
-import com.allshop.framework.core.ws.catalogoscorporativos.ModificarCatalogoPagoInType;
-import com.allshop.framework.core.ws.catalogoscorporativos.ModificarCatalogoPagoOutType;
+import com.allshop.framework.core.ws.catalogoscorporativos.ConsultarCatalogoPagoOut;
+import com.allshop.framework.core.ws.catalogoscorporativos.CrearCatalogoPagoIn;
+import com.allshop.framework.core.ws.catalogoscorporativos.CrearCatalogoPagoOut;
+import com.allshop.framework.core.ws.catalogoscorporativos.ModificarCatalogoPagoIn;
+import com.allshop.framework.core.ws.catalogoscorporativos.ModificarCatalogoPagoOut;
 
 public class CatalogoPagoServiceImpl implements CatalogoPagoService{
 
 	@Override
-	public CrearCatalogoPagoOutType crearCatalogoPago(CrearCatalogoPagoInType crearCatalogoPagoInType) {
+	public CrearCatalogoPagoOut crearCatalogoPago(CrearCatalogoPagoIn crearCatalogoPagoIn) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public ModificarCatalogoPagoOutType modificarCatalogoPago(ModificarCatalogoPagoInType modificarCatalogoPagoInType) {
+	public ModificarCatalogoPagoOut modificarCatalogoPago(ModificarCatalogoPagoIn modificarCatalogoPagoIn) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public ConsultarCatalogoPagoOutType consultarCatalogoPago(String idPago) {
+	public ConsultarCatalogoPagoOut consultarCatalogoPago(String idPago) {
 		// TODO Auto-generated method stub
 		return null;
 	}

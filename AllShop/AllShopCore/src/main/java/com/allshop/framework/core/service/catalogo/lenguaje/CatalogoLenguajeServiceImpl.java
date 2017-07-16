@@ -1,28 +1,28 @@
 package com.allshop.framework.core.service.catalogo.lenguaje;
 
-import com.allshop.framework.core.ws.catalogoscorporativos.ConsultarCatalogoLenguajeOutType;
-import com.allshop.framework.core.ws.catalogoscorporativos.CrearCatalogoLenguajeInType;
-import com.allshop.framework.core.ws.catalogoscorporativos.CrearCatalogoLenguajeOutType;
-import com.allshop.framework.core.ws.catalogoscorporativos.ModificarCatalogoLenguajeInType;
-import com.allshop.framework.core.ws.catalogoscorporativos.ModificarCatalogoLenguajeOutType;
+import com.allshop.framework.core.ws.catalogoscorporativos.ConsultarCatalogoLenguajeOut;
+import com.allshop.framework.core.ws.catalogoscorporativos.CrearCatalogoLenguajeIn;
+import com.allshop.framework.core.ws.catalogoscorporativos.CrearCatalogoLenguajeOut;
+import com.allshop.framework.core.ws.catalogoscorporativos.ModificarCatalogoLenguajeIn;
+import com.allshop.framework.core.ws.catalogoscorporativos.ModificarCatalogoLenguajeOut;
 
 public class CatalogoLenguajeServiceImpl implements CatalogoLenguajeService{
 
 	@Override
-	public CrearCatalogoLenguajeOutType crearCatalogoLenguaje(CrearCatalogoLenguajeInType crearCatalogoLenguajeInType) {
+	public CrearCatalogoLenguajeOut crearCatalogoLenguaje(CrearCatalogoLenguajeIn crearCatalogoLenguajeIn) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public ModificarCatalogoLenguajeOutType modificarCatalogoLenguaje(
-			ModificarCatalogoLenguajeInType modificarCatalogoLenguajeInType) {
+	public ModificarCatalogoLenguajeOut modificarCatalogoLenguaje(
+			ModificarCatalogoLenguajeIn modificarCatalogoLenguajeIn) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public ConsultarCatalogoLenguajeOutType consultarCatalogoLenguaje(String idLenguaje) {
+	public ConsultarCatalogoLenguajeOut consultarCatalogoLenguaje(String idLenguaje) {
 		// TODO Auto-generated method stub
 		return null;
 	}

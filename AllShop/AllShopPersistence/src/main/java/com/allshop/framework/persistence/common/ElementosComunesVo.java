@@ -1,50 +1,43 @@
 package com.allshop.framework.persistence.common;
 
-public class ElementosComunesVo {
-	protected String statusFlag;
-	protected String expiryDt;
-	protected String lastUpdateDt;
-	protected String lastUpdateTxId;
-	protected String lastUpdateUser;
+import java.util.Date;
 
-	public String getStatusFlag() {
+public class ElementosComunesVo {
+	protected int statusFlag;
+	protected Date expiryDt;
+	protected Date lastUpdateDt;
+	protected long lastUpdateTxId;
+	protected String lastUpdateUser;
+	
+	public int getStatusFlag() {
 		return statusFlag;
 	}
-
-	public void setStatusFlag(String statusFlag) {
+	public void setStatusFlag(int statusFlag) {
 		this.statusFlag = statusFlag;
 	}
-
-	public String getExpiryDt() {
+	public Date getExpiryDt() {
 		return expiryDt;
 	}
-
-	public void setExpiryDt(String expiryDt) {
+	public void setExpiryDt(Date expiryDt) {
 		this.expiryDt = expiryDt;
 	}
-
-	public String getLastUpdateDt() {
+	public Date getLastUpdateDt() {
 		return lastUpdateDt;
 	}
-
-	public void setLastUpdateDt(String lastUpdateDt) {
+	public void setLastUpdateDt(Date lastUpdateDt) {
 		this.lastUpdateDt = lastUpdateDt;
 	}
-
-	public String getLastUpdateTxId() {
+	public long getLastUpdateTxId() {
 		return lastUpdateTxId;
 	}
-
-	public void setLastUpdateTxId(String lastUpdateTxId) {
+	public void setLastUpdateTxId(long lastUpdateTxId) {
 		this.lastUpdateTxId = lastUpdateTxId;
 	}
-
 	public String getLastUpdateUser() {
 		return lastUpdateUser;
 	}
-
 	public void setLastUpdateUser(String lastUpdateUser) {
 		this.lastUpdateUser = lastUpdateUser;
 	}
-
+	
 }

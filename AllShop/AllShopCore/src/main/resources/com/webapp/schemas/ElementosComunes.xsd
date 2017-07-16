@@ -17,20 +17,18 @@ elementFormDefault="qualified" version="1.0">
                <xsd:documentation>STATUS_FLAG</xsd:documentation>
             </xsd:annotation>
             <xsd:simpleType>
-               <xsd:restriction base="xsd:string">
-                  <xsd:minLength value="5" />
-                  <xsd:maxLength value="50" />
-               </xsd:restriction>
+          <xsd:restriction base="xsd:integer">
+            <xsd:minInclusive value="1"/>
+            <xsd:maxInclusive value="2"/>
+          </xsd:restriction>
             </xsd:simpleType>
          </xsd:element>
-         <xsd:element maxOccurs="1" minOccurs="1" name="ExpiryDt">
+         <xsd:element maxOccurs="1" minOccurs="1" name="ExpiryDt" >
             <xsd:annotation>
                <xsd:documentation>EXPIRY_DT</xsd:documentation>
             </xsd:annotation>
             <xsd:simpleType>
-               <xsd:restriction base="xsd:string">
-                  <xsd:minLength value="5" />
-                  <xsd:maxLength value="50" />
+               <xsd:restriction base="xsd:dateTime">
                </xsd:restriction>
             </xsd:simpleType>
          </xsd:element>
@@ -39,9 +37,7 @@ elementFormDefault="qualified" version="1.0">
                <xsd:documentation>LAST_UPDATE_DT</xsd:documentation>
             </xsd:annotation>
             <xsd:simpleType>
-               <xsd:restriction base="xsd:string">
-                  <xsd:minLength value="5" />
-                  <xsd:maxLength value="50" />
+               <xsd:restriction base="xsd:dateTime">
                </xsd:restriction>
             </xsd:simpleType>
          </xsd:element>
@@ -50,10 +46,10 @@ elementFormDefault="qualified" version="1.0">
                <xsd:documentation>LAST_UPDATE_TX_ID</xsd:documentation>
             </xsd:annotation>
             <xsd:simpleType>
-               <xsd:restriction base="xsd:string">
-                  <xsd:minLength value="5" />
-                  <xsd:maxLength value="50" />
-               </xsd:restriction>
+          <xsd:restriction base="xsd:integer">
+            <xsd:minInclusive value="1"/>
+            <xsd:maxInclusive value="9999999999"/>
+          </xsd:restriction>
             </xsd:simpleType>
          </xsd:element>
          <xsd:element maxOccurs="1" minOccurs="1" name="LastUpdateUser">
@@ -62,7 +58,7 @@ elementFormDefault="qualified" version="1.0">
             </xsd:annotation>
             <xsd:simpleType>
                <xsd:restriction base="xsd:string">
-                  <xsd:minLength value="5" />
+                  <xsd:minLength value="0" />
                   <xsd:maxLength value="50" />
                </xsd:restriction>
             </xsd:simpleType>

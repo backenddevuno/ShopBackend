@@ -1,13 +1,13 @@
 package com.allshop.framework.core.service.catalogo.pago;
 
-import com.allshop.framework.core.ws.catalogoscorporativos.ConsultarCatalogoPagoOutType;
-import com.allshop.framework.core.ws.catalogoscorporativos.CrearCatalogoPagoInType;
-import com.allshop.framework.core.ws.catalogoscorporativos.CrearCatalogoPagoOutType;
-import com.allshop.framework.core.ws.catalogoscorporativos.ModificarCatalogoPagoInType;
-import com.allshop.framework.core.ws.catalogoscorporativos.ModificarCatalogoPagoOutType;
+import com.allshop.framework.core.ws.catalogoscorporativos.ConsultarCatalogoPagoOut;
+import com.allshop.framework.core.ws.catalogoscorporativos.CrearCatalogoPagoIn;
+import com.allshop.framework.core.ws.catalogoscorporativos.CrearCatalogoPagoOut;
+import com.allshop.framework.core.ws.catalogoscorporativos.ModificarCatalogoPagoIn;
+import com.allshop.framework.core.ws.catalogoscorporativos.ModificarCatalogoPagoOut;
 
 public interface CatalogoPagoService {
-	CrearCatalogoPagoOutType crearCatalogoPago(CrearCatalogoPagoInType crearCatalogoPagoInType);
-	ModificarCatalogoPagoOutType modificarCatalogoPago(ModificarCatalogoPagoInType modificarCatalogoPagoInType);
-	ConsultarCatalogoPagoOutType consultarCatalogoPago(String idPago);
+	CrearCatalogoPagoOut crearCatalogoPago(CrearCatalogoPagoIn crearCatalogoPagoIn);
+	ModificarCatalogoPagoOut modificarCatalogoPago(ModificarCatalogoPagoIn modificarCatalogoPagoIn);
+	ConsultarCatalogoPagoOut consultarCatalogoPago(String idPago);
 }
