@@ -32,5 +32,12 @@
 				]]>
 			</value>
 		</property>
+		<property name="nextIdRol">
+			<value>
+				<![CDATA[
+					SELECT MAX(LANG_TP_CD) + 1 FROM CATROLES
+				]]>
+			</value>
+		</property>
 	</bean>
 </beans>

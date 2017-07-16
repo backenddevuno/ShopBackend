@@ -5,8 +5,10 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.transform.Result;
 
+import com.allshop.framework.core.common.SoapCommonElement;
 import com.allshop.framework.core.ws.common.excepciongeneral.ExcepcionGenericaType;
 import com.allshop.framework.core.ws.common.excepciongeneral.ObjectFactory;
+import com.allshop.framework.persistence.common.HeaderResponseVo;
 
 import org.springframework.ws.soap.SoapFault;
 import org.springframework.ws.soap.SoapFaultDetail;

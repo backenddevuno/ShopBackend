@@ -7,7 +7,7 @@ import com.allshop.framework.core.ws.catalogoscorporativos.ModificarCatalogoRolI
 import com.allshop.framework.core.ws.catalogoscorporativos.ModificarCatalogoRolOut;
 
 public interface CatalogoRolComponent {
-	CrearCatalogoRolOut crearCatalogoRolComponent(CrearCatalogoRolIn crearCatalogoRolIn);
-	ModificarCatalogoRolOut modificarCatalogoRolComponent(ModificarCatalogoRolIn modificarCatalogoRolIn);
-	ConsultarCatalogoRolOut consultarCatalogoRolComponent(String idRol);
+	CrearCatalogoRolOut crearCatalogoRolComponent(CrearCatalogoRolIn crearCatalogoRolIn) throws Exception;
+	ModificarCatalogoRolOut modificarCatalogoRolComponent(ModificarCatalogoRolIn modificarCatalogoRolIn) throws Exception;
+	ConsultarCatalogoRolOut consultarCatalogoRolComponent(String idRol) throws Exception;
 }

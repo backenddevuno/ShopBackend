@@ -12,6 +12,7 @@ import org.apache.log4j.Logger;
 import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.core.simple.ParameterizedRowMapper;
 
+import com.allshop.framework.commons.utils.date.DateUtilsCommons;
 import com.allshop.framework.persistence.catalogo.rol.vo.CatalogoRolVo;
 import com.allshop.framework.persistence.common.ElementosComunesVo;
 import com.allshop.framework.persistence.common.EstatusComunVo;
@@ -29,15 +30,15 @@ public class CatalogoRolDaoImpl extends JdbcDao implements CatalogoRolDao {
 	private EstatusComunVo estatusComunVo = null;  
 	
 	@Override
-	public CatalogoRolVo crearCatalogoRolDao(final CatalogoRolVo catalogoRolVo) {
+	public CatalogoRolVo crearCatalogoRolDao(final CatalogoRolVo catalogoRolVo) throws Exception{
 
 		if (log.isDebugEnabled()) {
 			log.debug("crearCatalogoRol...");
 		}
 
-		final int idRol = jdbcTemplate.queryForInt(nextIdRol);
-
 		try {
+			final int idRol = jdbcTemplate.queryForInt(nextIdRol);
+			
 			int affected = jdbcTemplate.update(new PreparedStatementCreator() {
 				public PreparedStatement createPreparedStatement(Connection con) throws SQLException {
 					PreparedStatement ps = con.prepareStatement(qryCrearRol);
@@ -45,8 +46,8 @@ public class CatalogoRolDaoImpl extends JdbcDao implements CatalogoRolDao {
 					ps.setLong(2, catalogoRolVo.getIdRol());
 					ps.setString(3, catalogoRolVo.getDescRol());
 					ps.setInt(4, catalogoRolVo.getElementosComunesVo().getStatusFlag());
-					ps.setDate(5, (Date) catalogoRolVo.getElementosComunesVo().getExpiryDt());
-					ps.setDate(6, (Date) catalogoRolVo.getElementosComunesVo().getLastUpdateDt());
+					ps.setDate(5, DateUtilsCommons.convertJavaDateToSqlDate(catalogoRolVo.getElementosComunesVo().getExpiryDt()));
+					ps.setDate(6, DateUtilsCommons.convertJavaDateToSqlDate(catalogoRolVo.getElementosComunesVo().getLastUpdateDt()));
 					ps.setInt(7, idRol);
 					ps.setString(8, catalogoRolVo.getElementosComunesVo().getLastUpdateUser());
 	
@@ -54,18 +55,15 @@ public class CatalogoRolDaoImpl extends JdbcDao implements CatalogoRolDao {
 				}
 			});
 		} catch(Exception ex){
-			estatusComunVo =  new EstatusComunVo();
-			estatusComunVo.setEstatus(ex.getLocalizedMessage());
-			estatusComunVo.setDescripcion(ex.getMessage());
-			ex.printStackTrace();
+			throw new Exception(ex);
 		}
 		// Importante verificar que afectamos exactamente un registro.
 //		this.checkAffected(affected);
-		return new CatalogoRolVo();
+		return catalogoRolVo;
 	}
 
 	@Override
-	public CatalogoRolVo modificarCatalogoRolDao(final CatalogoRolVo catalogoRolVo) {
+	public CatalogoRolVo modificarCatalogoRolDao(final CatalogoRolVo catalogoRolVo) throws Exception{
 	       if (log.isDebugEnabled()) {
 	            log.debug("modificarCatalogoRol...");
 	        }
@@ -87,14 +85,11 @@ public class CatalogoRolDaoImpl extends JdbcDao implements CatalogoRolDao {
 		            }
 		        });
 			} catch(Exception ex){
-				estatusComunVo =  new EstatusComunVo();
-				estatusComunVo.setEstatus(ex.getLocalizedMessage());
-				estatusComunVo.setDescripcion(ex.getMessage());
-				ex.printStackTrace();
+				throw new Exception(ex);
 			}
 	        // Importante verificar que afectamos exactamente un registro.
 //	        this.checkAffected(affected);
-		return new CatalogoRolVo();
+		return catalogoRolVo;
 	}
 
     private static ParameterizedRowMapper<CatalogoRolVo> MAPPER = new ParameterizedRowMapper<CatalogoRolVo>() {
@@ -118,7 +113,7 @@ public class CatalogoRolDaoImpl extends JdbcDao implements CatalogoRolDao {
     };
     
 	@Override
-	public List<CatalogoRolVo> consultarCatalogoRolDao(String idRol) {
+	public List<CatalogoRolVo> consultarCatalogoRolDao(String idRol) throws Exception{
         if (log.isDebugEnabled()) {
             log.debug("consultarCatalogoRol...");
         }
@@ -126,15 +121,30 @@ public class CatalogoRolDaoImpl extends JdbcDao implements CatalogoRolDao {
         List<Object> parameters = new ArrayList<Object>();
         parameters.add(idRol);
         Object[] args = parameters.toArray();
-        return (List<CatalogoRolVo>) jdbcTemplate.query(qryConsultarRol, args, MAPPER);
+        List<CatalogoRolVo> consultarCatalogoRolDao = null;
+        
+        try{
+        	consultarCatalogoRolDao = (List<CatalogoRolVo>) jdbcTemplate.query(qryConsultarRol, args, MAPPER);
+        }catch(Exception ex){
+        	throw new Exception(ex);
+        }
+        
+        return consultarCatalogoRolDao;
 	}
 
-    public List<CatalogoRolVo> getRoles() {
+    public List<CatalogoRolVo> getRoles() throws Exception{
 
         if (log.isDebugEnabled()) {
             log.debug("getRoles...");
         }
-        return (List<CatalogoRolVo>) jdbcTemplate.query(qryConsultarRol, MAPPER);
+        
+        List<CatalogoRolVo> getRoles = null;
+        try{
+        	getRoles = (List<CatalogoRolVo>) jdbcTemplate.query(qryConsultarRol, MAPPER);
+        }catch(Exception ex){
+        	throw new Exception(ex);
+        }
+        return getRoles;
     }
     
 	public void setQryCrearRol(String qryCrearRol) {

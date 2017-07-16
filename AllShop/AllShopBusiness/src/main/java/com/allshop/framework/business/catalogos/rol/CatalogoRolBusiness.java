@@ -5,7 +5,7 @@ import java.util.List;
 import com.allshop.framework.persistence.catalogo.rol.vo.CatalogoRolVo;
 
 public interface CatalogoRolBusiness {
-	CatalogoRolVo crearCatalogoRolBusiness(CatalogoRolVo catalogoRolVo);
-	CatalogoRolVo modificarCatalogoRolBusiness(CatalogoRolVo catalogoRolVo);
-	List<CatalogoRolVo> consultarCatalogoRolBusiness(String idRol);
+	CatalogoRolVo crearCatalogoRolBusiness(CatalogoRolVo catalogoRolVo) throws Exception;
+	CatalogoRolVo modificarCatalogoRolBusiness(CatalogoRolVo catalogoRolVo) throws Exception;
+	List<CatalogoRolVo> consultarCatalogoRolBusiness(String idRol) throws Exception;
 }

@@ -3,7 +3,7 @@ package com.allshop.framework.core.service.catalogo.rol;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.allshop.framework.commons.utils.date.XMLCalendarToDate;
+import com.allshop.framework.commons.utils.date.DateUtilsCommons;
 import com.allshop.framework.core.ws.catalogoscorporativos.CatalogoRol;
 import com.allshop.framework.core.ws.catalogoscorporativos.ConsultarCatalogoRolOut;
 import com.allshop.framework.core.ws.catalogoscorporativos.CrearCatalogoRolIn;
@@ -20,30 +20,36 @@ public class CatalogoRolComponentImpl implements CatalogoRolComponent{
 	@Autowired
 	protected CatalogoRolService catalogoRolService;
 	@Override
-	public CrearCatalogoRolOut crearCatalogoRolComponent(CrearCatalogoRolIn crearCatalogoRolInType) {
+	public CrearCatalogoRolOut crearCatalogoRolComponent(CrearCatalogoRolIn crearCatalogoRolInType) throws Exception {
 		CrearCatalogoRolOut crearCatalogoRolOut =  new CrearCatalogoRolOut();
 		CatalogoRolVo catalogoRolVo = new CatalogoRolVo(); 
 		ElementosComunesVo elementosComunesVo = new ElementosComunesVo();
 		CatalogoRol catalogoRol = new CatalogoRol();
 		
-		catalogoRolVo.setLangTpCd(crearCatalogoRolInType.getCatalogoRol().getLangTpCd());
-		catalogoRolVo.setIdRol(crearCatalogoRolInType.getCatalogoRol().getIdRol());
-		catalogoRolVo.setDescRol(crearCatalogoRolInType.getCatalogoRol().getDescRol());
-		
-		elementosComunesVo.setStatusFlag(crearCatalogoRolInType.getCatalogoRol().getElementosComunes().getStatusFlag());
-		elementosComunesVo.setExpiryDt(XMLCalendarToDate.toDate(crearCatalogoRolInType.getCatalogoRol().getElementosComunes().getExpiryDt()));
-		elementosComunesVo.setLastUpdateDt(XMLCalendarToDate.toDate(crearCatalogoRolInType.getCatalogoRol().getElementosComunes().getLastUpdateDt()));
-		elementosComunesVo.setLastUpdateTxId(crearCatalogoRolInType.getCatalogoRol().getElementosComunes().getLastUpdateTxId());
-		elementosComunesVo.setLastUpdateUser(crearCatalogoRolInType.getCatalogoRol().getElementosComunes().getLastUpdateUser());
-		
-		catalogoRolVo.setElementosComunesVo(elementosComunesVo);
-		
-		CatalogoRolVo catalogoRolVoOut = catalogoRolService.crearCatalogoRolService(catalogoRolVo);
-		catalogoRol.setLangTpCd(catalogoRolVoOut.getLangTpCd());
-		catalogoRol.setIdRol(catalogoRolVoOut.getIdRol());
-		catalogoRol.setDescRol(catalogoRolVoOut.getDescRol());
-		
-		crearCatalogoRolOut.setCatalogoRol(catalogoRol);
+		try{
+			
+			catalogoRolVo.setLangTpCd(crearCatalogoRolInType.getCatalogoRol().getLangTpCd());
+			catalogoRolVo.setIdRol(crearCatalogoRolInType.getCatalogoRol().getIdRol());
+			catalogoRolVo.setDescRol(crearCatalogoRolInType.getCatalogoRol().getDescRol());
+			
+			elementosComunesVo.setStatusFlag(crearCatalogoRolInType.getCatalogoRol().getElementosComunes().getStatusFlag());
+			elementosComunesVo.setExpiryDt(DateUtilsCommons.toDate(crearCatalogoRolInType.getCatalogoRol().getElementosComunes().getExpiryDt()));
+			elementosComunesVo.setLastUpdateDt(DateUtilsCommons.toDate(crearCatalogoRolInType.getCatalogoRol().getElementosComunes().getLastUpdateDt()));
+			elementosComunesVo.setLastUpdateTxId(crearCatalogoRolInType.getCatalogoRol().getElementosComunes().getLastUpdateTxId());
+			elementosComunesVo.setLastUpdateUser(crearCatalogoRolInType.getCatalogoRol().getElementosComunes().getLastUpdateUser());
+			
+			catalogoRolVo.setElementosComunesVo(elementosComunesVo);
+			
+			CatalogoRolVo catalogoRolVoOut = catalogoRolService.crearCatalogoRolService(catalogoRolVo);
+			catalogoRol.setLangTpCd(catalogoRolVoOut.getLangTpCd());
+			catalogoRol.setIdRol(catalogoRolVoOut.getIdRol());
+			catalogoRol.setDescRol(catalogoRolVoOut.getDescRol());
+			
+			crearCatalogoRolOut.setCatalogoRol(catalogoRol);
+
+		}catch(Exception ex){
+			throw new Exception(ex);
+		}
 		
 		return crearCatalogoRolOut;
 	}

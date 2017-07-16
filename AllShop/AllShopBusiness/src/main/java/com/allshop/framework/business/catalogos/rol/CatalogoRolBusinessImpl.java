@@ -15,18 +15,36 @@ public class CatalogoRolBusinessImpl implements CatalogoRolBusiness{
 	protected CatalogoRolDao catalogoRolDao;
 	
 	@Override
-	public CatalogoRolVo crearCatalogoRolBusiness(CatalogoRolVo catalogoRolVo) {
-		return catalogoRolDao.crearCatalogoRolDao(catalogoRolVo);
+	public CatalogoRolVo crearCatalogoRolBusiness(CatalogoRolVo catalogoRolVoIn) throws Exception {
+		CatalogoRolVo catalogoRolVoOut = null;
+		try{
+			catalogoRolVoOut = catalogoRolDao.crearCatalogoRolDao(catalogoRolVoIn);
+		}catch(Exception ex){
+			throw new Exception(ex);
+		}
+		return catalogoRolVoOut;
 	}
 
 	@Override
-	public CatalogoRolVo modificarCatalogoRolBusiness(CatalogoRolVo catalogoRolVo) {
-		return catalogoRolDao.modificarCatalogoRolDao(catalogoRolVo);
+	public CatalogoRolVo modificarCatalogoRolBusiness(CatalogoRolVo catalogoRolVoIn) throws Exception {
+		CatalogoRolVo catalogoRolVoOut = null;
+		try{
+			catalogoRolVoOut = catalogoRolDao.modificarCatalogoRolDao(catalogoRolVoIn);
+		}catch(Exception ex){
+			throw new Exception(ex);
+		}
+		return catalogoRolVoOut;
 	}
 
 	@Override
-	public List<CatalogoRolVo> consultarCatalogoRolBusiness(String idRol) {
-		return catalogoRolDao.consultarCatalogoRolDao(idRol);
+	public List<CatalogoRolVo> consultarCatalogoRolBusiness(String idRol) throws Exception {
+		List<CatalogoRolVo> listCatalogoRolVoOut = null;
+		try{
+			listCatalogoRolVoOut = catalogoRolDao.consultarCatalogoRolDao(idRol);
+		}catch(Exception ex){
+			throw new Exception(ex);
+		}
+		return listCatalogoRolVoOut;
 	}
 
 }

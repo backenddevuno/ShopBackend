@@ -10,8 +10,12 @@ import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
 
-public class XMLCalendarToDate {
+public class DateUtilsCommons {
 
+	public static void main(String args[]){
+		Date date = new Date();
+		System.out.println(toXMLGregorianCalendar(date));
+	}
     /*
      * Converts java.util.Date to javax.xml.datatype.XMLGregorianCalendar
      */
@@ -38,4 +42,8 @@ public class XMLCalendarToDate {
         return calendar.toGregorianCalendar().getTime();
     }
 
+    public static java.sql.Date convertJavaDateToSqlDate(java.util.Date date) {
+        return new java.sql.Date(date.getTime());
+    }
+    
 }
