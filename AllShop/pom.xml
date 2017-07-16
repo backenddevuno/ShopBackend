@@ -7,7 +7,7 @@
   <packaging>pom</packaging>
   <name>AllShop</name>
   
-  <!-- Desarrollador  -->
+  <!--Desarrollador-->
   <modules>
     <module>AllShopEar</module>
     <module>AllShopWeb</module>
