@@ -1,11 +1,11 @@
-package com.allshop.framework.services.catalogos.rol;
+package com.allshop.framework.services.catalogo.rol;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.allshop.framework.business.catalogos.rol.CatalogoRolBusiness;
+import com.allshop.framework.business.catalogo.rol.CatalogoRolBusiness;
 import com.allshop.framework.persistence.catalogo.rol.vo.CatalogoRolVo;
 
 @Service

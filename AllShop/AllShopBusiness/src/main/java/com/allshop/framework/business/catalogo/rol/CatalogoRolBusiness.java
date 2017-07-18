@@ -1,4 +1,4 @@
-package com.allshop.framework.business.catalogos.rol;
+package com.allshop.framework.business.catalogo.rol;
 
 import java.util.List;
 

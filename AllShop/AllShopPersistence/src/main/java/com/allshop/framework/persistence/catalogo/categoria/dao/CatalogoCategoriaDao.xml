@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+	<bean id="CatalogoCategoriaDao"
+		class="com.allshop.framework.persistence.catalogo.categoria.dao.CatalogoCategoriaDaoImpl">
+		<property name="dataSource" ref="dataSource" />
+		<property name="qryCrearCategoria">
+			<value>
+                <![CDATA[
+					INSERT INTO CATCATEGORIA(
+					LANG_TP_CD,ID_CATEGORIA,DESC_CATEGORIA,STATUS_FLAG,EXPIRY_DT,LAST_UPDATE_DT,LAST_UPDATE_TX_ID,LAST_UPDATE_USER)values(?,?,?,?,?,?,?,?)
+				]]>
+			</value>
+		</property>
+		<property name="qryModificarCategoria">
+			<value>
+                <![CDATA[
+					UPDATE CATCATEGORIA SET
+					LANG_TP_CD=?,ID_CATEGORIA=?,DESC_CATEGORIA=?,STATUS_FLAG=?,EXPIRY_DT=?,LAST_UPDATE_DT=?,LAST_UPDATE_TX_ID=?,LAST_UPDATE_USER=?
+					WHERE ID_CATEGORIA=?
+				]]>
+			</value>
+		</property>
+				<property name="qryConsultarCategoria">
+			<value>
+                <![CDATA[
+					SELECT
+					LANG_TP_CD,ID_CATEGORIA,DESC_CATEGORIA,STATUS_FLAG,EXPIRY_DT,LAST_UPDATE_DT,LAST_UPDATE_TX_ID,LAST_UPDATE_USER
+					FROM CATCATEGORIA
+					ORDER BY ID_CATEGORIA
+				]]>
+			</value>
+		</property>
+				<property name="nextIdCategoria">
+			<value>
+                <![CDATA[
+					SELECT MAX(LANG_TP_CD) + 1 FROM  CATCATEGORIA
+				]]>
+			</value>
+		</property>
+	</bean>
+</beans>

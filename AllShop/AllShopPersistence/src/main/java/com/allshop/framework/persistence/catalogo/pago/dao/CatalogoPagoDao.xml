@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+	<bean id="CatalogoPagoDao"
+		class=com.allshop.framework.persistence.catalogo.pago.dao.CatalogoPagoDaoImpl">
+		<property name="dataSource" ref="dataSource" />
+		<property name="qryCrearPago">
+			<value>
+                <![CDATA[
+					INSERT INTO CATPAGO(
+					LANG_TP_CD,ID_PAGO,COD_PAGO,DESC_PAGO,STATUS_FLAG,EXPIRY_DT,LAST_UPDATE_DT,LAST_UPDATE_TX_ID,LAST_UPDATE_USER)values(?,?,?,?,?,?,?,?,?)
+				]]>
+			</value>
+		</property>
+		<property name="qryModificarPago">
+			<value>
+                <![CDATA[
+					UPDATE CATPAGO SET
+					LANG_TP_CD=?,ID_PAGO=?,COD_PAGO=?,DESC_PAGO=?,STATUS_FLAG=?,EXPIRY_DT=?,LAST_UPDATE_DT=?,LAST_UPDATE_TX_ID=?,LAST_UPDATE_USER=?
+					WHERE ID_PAGO=?
+				]]>
+			</value>
+		</property>
+				<property name="qryConsultarPago">
+			<value>
+                <![CDATA[
+					SELECT 
+					LANG_TP_CD,ID_PAGO,COD_PAGO,DESC_PAGO,STATUS_FLAG,EXPIRY_DT,LAST_UPDATE_DT,LAST_UPDATE_TX_ID,LAST_UPDATE_USER
+					FROM CATPAGO
+					ORDER BY ID_PAGO
+				]]>
+			</value>
+		</property>
+				<property name="nextIdPago">
+			<value>
+                <![CDATA[
+					SELECT MAX(LANG_TP_CD) + 1 FROM  CATPAGO
+				]]>
+			</value>
+		</property>
+	</bean>
+</beans>

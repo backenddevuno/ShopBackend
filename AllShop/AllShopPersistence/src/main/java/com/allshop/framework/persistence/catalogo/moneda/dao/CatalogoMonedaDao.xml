@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+	<bean id="CatalogoMonedaDao"
+		class="com.allshop.framework.persistence.catalogo.moneda.dao.CatalogoMonedaDaoImpl">
+		<property name="dataSource" ref="dataSource" />
+		<property name="qryCrearMoneda">
+			<value>
+                <![CDATA[
+					INSERT INTO CATMONEDA(
+					LANG_TP_CD,ID_MONEDA,COD_MONEDA,DESC_MONEDA,STATUS_FLAG,EXPIRY_DT,LAST_UPDATE_DT,LAST_UPDATE_TX_ID,LAST_UPDATE_USER)values(?,?,?,?,?,?,?,?,?)
+				]]>
+			</value>
+		</property>
+		<property name="qryModificarMoneda">
+			<value>
+                <![CDATA[
+					UPDATE CATMONEDA SET
+					LANG_TP_CD=?,ID_MONEDA=?,COD_MONEDA=?,DESC_MONEDA=?,STATUS_FLAG=?,EXPIRY_DT=?,LAST_UPDATE_DT=?,LAST_UPDATE_TX_ID=?,LAST_UPDATE_USER=?
+					WHERE ID_MONEDA=?
+				]]>
+			</value>
+		</property>
+				<property name="qryConsultarMoneda">
+			<value>
+                <![CDATA[
+					SELECT
+					LANG_TP_CD,ID_MONEDA,COD_MONEDA,DESC_MONEDA,STATUS_FLAG,EXPIRY_DT,LAST_UPDATE_DT,LAST_UPDATE_TX_ID,LAST_UPDATE_USER
+					FROM CATMONEDA
+					ORDER BY ID_MONEDA
+				]]>
+			</value>
+		</property>
+				<property name="nextIdMoneda">
+			<value>
+                <![CDATA[
+					SELECT MAX(LANG_TP_CD) + 1 FROM  CATMONEDA
+				]]>
+			</value>
+		</property>
+	</bean>
+</beans>

@@ -12,7 +12,7 @@ import com.allshop.framework.core.ws.catalogoscorporativos.ModificarCatalogoRolI
 import com.allshop.framework.core.ws.catalogoscorporativos.ModificarCatalogoRolOut;
 import com.allshop.framework.persistence.catalogo.rol.vo.CatalogoRolVo;
 import com.allshop.framework.persistence.common.ElementosComunesVo;
-import com.allshop.framework.services.catalogos.rol.CatalogoRolService;
+import com.allshop.framework.services.catalogo.rol.CatalogoRolService;
 
 @Service
 public class CatalogoRolComponentImpl implements CatalogoRolComponent{
