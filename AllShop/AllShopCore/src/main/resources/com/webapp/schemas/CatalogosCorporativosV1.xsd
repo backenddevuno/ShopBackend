@@ -212,8 +212,7 @@
 		</xsd:annotation>
 		<xsd:complexType>
 		<xsd:sequence>
-			<xsd:element maxOccurs="1" minOccurs="1" name="CatalogoRol" type="tns:CatalogoRol" />
-			<xsd:element maxOccurs="1" minOccurs="1" name="EstatusComun" type="tnsec:EstatusComun" />
+			<xsd:element maxOccurs="unbounded" minOccurs="1" name="CatalogoRol" type="tns:CatalogoRol" />
 		</xsd:sequence>
 		</xsd:complexType>
 	</xsd:element>
@@ -224,7 +223,7 @@
 		</xsd:annotation>
 		<xsd:complexType>
 		<xsd:sequence>
-			<xsd:element maxOccurs="1" minOccurs="1" name="IdRol">
+			<xsd:element maxOccurs="1" minOccurs="1" name="IdPago">
 				<xsd:annotation>
 					<xsd:documentation>ID_ROL</xsd:documentation>
 				</xsd:annotation>
@@ -244,10 +243,8 @@
 		</xsd:annotation>
 		<xsd:complexType>
 		<xsd:sequence>
-			<xsd:element maxOccurs="1" minOccurs="1" name="CatalogoPago"
+			<xsd:element maxOccurs="unbounded" minOccurs="1" name="CatalogoPago"
 				type="tns:CatalogoPago" />
-			<xsd:element maxOccurs="1" minOccurs="1" name="EstatusComun"
-				type="tnsec:EstatusComun" />
 		</xsd:sequence>
 		</xsd:complexType>
 	</xsd:element>
@@ -259,7 +256,7 @@
 		</xsd:annotation>
 		<xsd:complexType>
 		<xsd:sequence>
-			<xsd:element maxOccurs="1" minOccurs="1" name="IdRol">
+			<xsd:element maxOccurs="1" minOccurs="1" name="IdDesarrollo">
 				<xsd:annotation>
 					<xsd:documentation>ID_ROL</xsd:documentation>
 				</xsd:annotation>
@@ -280,10 +277,8 @@
 		</xsd:annotation>
 		<xsd:complexType>
 		<xsd:sequence>
-			<xsd:element maxOccurs="1" minOccurs="1" name="CatalogoDesarrollo"
+			<xsd:element maxOccurs="unbounded" minOccurs="1" name="CatalogoDesarrollo"
 				type="tns:CatalogoDesarrollo" />
-			<xsd:element maxOccurs="1" minOccurs="1" name="EstatusComun"
-				type="tnsec:EstatusComun" />
 		</xsd:sequence>
 		</xsd:complexType>
 	</xsd:element>
@@ -295,7 +290,7 @@
 		</xsd:annotation>
 		<xsd:complexType>
 		<xsd:sequence>
-			<xsd:element maxOccurs="1" minOccurs="1" name="IdRol">
+			<xsd:element maxOccurs="1" minOccurs="1" name="IdLenguaje">
 				<xsd:annotation>
 					<xsd:documentation>ID_ROL</xsd:documentation>
 				</xsd:annotation>
@@ -316,10 +311,8 @@
 		</xsd:annotation>
 		<xsd:complexType>
 		<xsd:sequence>
-			<xsd:element maxOccurs="1" minOccurs="1" name="CatalogoLenguaje"
+			<xsd:element maxOccurs="unbounded" minOccurs="1" name="CatalogoLenguaje"
 				type="tns:CatalogoLenguaje" />
-			<xsd:element maxOccurs="1" minOccurs="1" name="EstatusComun"
-				type="tnsec:EstatusComun" />
 		</xsd:sequence>
 		</xsd:complexType>
 	</xsd:element>
@@ -330,7 +323,7 @@
 		</xsd:annotation>
 		<xsd:complexType>
 		<xsd:sequence>
-			<xsd:element maxOccurs="1" minOccurs="1" name="IdRol">
+			<xsd:element maxOccurs="1" minOccurs="1" name="IdMoneda">
 				<xsd:annotation>
 					<xsd:documentation>ID_ROL</xsd:documentation>
 				</xsd:annotation>
@@ -350,10 +343,8 @@
 		</xsd:annotation>
 		<xsd:complexType>
 		<xsd:sequence>
-			<xsd:element maxOccurs="1" minOccurs="1" name="CatalogoMoneda"
+			<xsd:element maxOccurs="unbounded" minOccurs="1" name="CatalogoMoneda"
 				type="tns:CatalogoMoneda" />
-			<xsd:element maxOccurs="1" minOccurs="1" name="EstatusComun"
-				type="tnsec:EstatusComun" />
 		</xsd:sequence>
 		</xsd:complexType>
 	</xsd:element>
@@ -365,7 +356,7 @@
 		</xsd:annotation>
 		<xsd:complexType>
 		<xsd:sequence>
-			<xsd:element maxOccurs="1" minOccurs="1" name="IdRol">
+			<xsd:element maxOccurs="1" minOccurs="1" name="IdCategoria">
 				<xsd:annotation>
 					<xsd:documentation>ID_ROL</xsd:documentation>
 				</xsd:annotation>
@@ -386,10 +377,8 @@
 		</xsd:annotation>
 		<xsd:complexType>
 		<xsd:sequence>
-			<xsd:element maxOccurs="1" minOccurs="1" name="CatalogoCategoria"
+			<xsd:element maxOccurs="unbounded" minOccurs="1" name="CatalogoCategoria"
 				type="tns:CatalogoCategoria" />
-			<xsd:element maxOccurs="1" minOccurs="1" name="EstatusComun"
-				type="tnsec:EstatusComun" />
 		</xsd:sequence>
 		</xsd:complexType>
 	</xsd:element>
@@ -401,7 +390,7 @@
 		</xsd:annotation>
 		<xsd:complexType>
 		<xsd:sequence>
-			<xsd:element maxOccurs="1" minOccurs="1" name="IdRol">
+			<xsd:element maxOccurs="1" minOccurs="1" name="IdCalificacion">
 				<xsd:annotation>
 					<xsd:documentation>ID_ROL</xsd:documentation>
 				</xsd:annotation>
@@ -422,10 +411,8 @@
 		</xsd:annotation>
 		<xsd:complexType>
 		<xsd:sequence>
-			<xsd:element maxOccurs="1" minOccurs="1"
+			<xsd:element maxOccurs="unbounded" minOccurs="1"
 				name="CatalogoCalificacion" type="tns:CatalogoCalificacion" />
-			<xsd:element maxOccurs="1" minOccurs="1" name="EstatusComun"
-				type="tnsec:EstatusComun" />
 		</xsd:sequence>
 		</xsd:complexType>
 	</xsd:element>
@@ -436,7 +423,7 @@
 		</xsd:annotation>
 		<xsd:complexType>
 		<xsd:sequence>
-			<xsd:element maxOccurs="1" minOccurs="1" name="IdRol">
+			<xsd:element maxOccurs="1" minOccurs="1" name="IdCuenta">
 				<xsd:annotation>
 					<xsd:documentation>ID_ROL</xsd:documentation>
 				</xsd:annotation>
@@ -456,10 +443,7 @@
 		</xsd:annotation>
 		<xsd:complexType>
 		<xsd:sequence>
-			<xsd:element maxOccurs="1" minOccurs="1" name="CatalogoCuenta"
-				type="tns:CatalogoCuenta" />
-			<xsd:element maxOccurs="1" minOccurs="1" name="EstatusComun"
-				type="tnsec:EstatusComun" />
+			<xsd:element maxOccurs="unbounded" minOccurs="1" name="CatalogoCuenta" type="tns:CatalogoCuenta" />
 		</xsd:sequence>
 		</xsd:complexType>
 	</xsd:element>

@@ -4,19 +4,6 @@
 	id="WebApp_ID" version="2.5">
 	<display-name>Archetype Created Web Application</display-name>
 
-	<!-- classpath*:/spring-ws-core.xml classpath*:/spring-persistence-core.xml 
-		classpath*:/spring-tomcat-beans.xml classpath*:com/allshop/framework/**/*Dao.xml 
-			<context-param>
-			/WEB-INF/spring-ws-servlet.xml
-		<param-name>contextConfigLocation</param-name>
-		<param-value>classpath*:springContext*.xml</param-value>
-	</context-param>
-	/WEB-INF/applicationContext.xml
-	contextConfigLocation
-	classpath*:spring-ws-servlet.xml
-	classpath*:com/allshop/framework/persistence/catalogo/rol/dao/CatalogoRolDao.xml
-		-->
-
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>
@@ -28,11 +15,11 @@
 		</param-value>
 	</context-param>
 
-	<listener>
+	<!--listener>
 		<listener-class>
 			org.springframework.web.context.request.RequestContextListener
 		</listener-class>
-	</listener>
+	</listener-->
 
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
@@ -52,6 +39,24 @@
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 
+    <servlet>
+        <servlet-name>jerseyServlet</servlet-name>
+        <servlet-class>com.sun.jersey.spi.spring.container.servlet.SpringServlet</servlet-class>
+        <init-param>
+            <param-name>com.sun.jersey.config.property.packages</param-name>
+            <param-value>com.allshop.framework.web.adaptador.rest</param-value>
+        </init-param>
+       <init-param>
+             <param-name>com.sun.jersey.api.json.POJOMappingFeature</param-name>
+             <param-value>true</param-value>
+        </init-param>
+       <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>jerseyServlet</servlet-name>
+        <url-pattern>/rest/*</url-pattern>
+    </servlet-mapping>
+    
 	<servlet-mapping>
 		<servlet-name>spring-ws</servlet-name>
 		<url-pattern>*.wsdl</url-pattern>
